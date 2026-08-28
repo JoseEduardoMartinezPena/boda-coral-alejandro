@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  font-family: Arial, sans-serif;
+
+  color: #1a1a1a;
+  background: #eeeeee;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.invitation {
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+
+  background: #ffffff;
+}
+
+.hero {
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  text-align: center;
+}
+
+.hero__eyebrow {
+  margin: 0 0 1rem;
+}
+
+.hero__title {
+  margin: 0;
+
+  font-size: 3rem;
+  line-height: 0.9;
+}
+
+.hero__title span {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.hero__date {
+  margin-top: 1.5rem;
+}
+
+.section {
+  min-height: 60vh;
+  padding: 4rem 2rem;
+
+  border-top: 1px solid #dddddd;
+}
+
+.section h2 {
+  margin: 0;
+}
