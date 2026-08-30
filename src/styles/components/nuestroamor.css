@@ -1,0 +1,100 @@
+/* ============================================
+   NUESTRO AMOR SECTION (mobile-only)
+   ============================================ */
+
+.nuestroamor {
+  margin: var(--space-lg) 0;
+  padding: var(--space-md) 0;
+}
+
+.nuestroamor__text {
+  max-width: 90%;
+  margin: 0 auto var(--space-md);
+  text-align: center;
+}
+
+.nuestroamor__text p {
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  color: var(--color-gray);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.nuestroamor__text p:first-child {
+  margin-top: 0;
+}
+
+.nuestroamor__text span {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  display: block;
+}
+
+.nuestroamor__text p:nth-child(2) span {
+  font-size: 1.2em;
+  margin: var(--space-sm) 0;
+}
+
+.nuestroamor__text p:nth-child(2) span:nth-child(3) {
+  font-size: 1.5em;
+  font-family: var(--font-script);
+  color: var(--color-green);
+  margin: var(--space-sm) 0;
+}
+
+.nuestroamor__image {
+  width: 100%;
+  margin: var(--space-lg) 0;
+  aspect-ratio: 1 / 1;
+}
+
+.nuestroamor__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.nuestroamor__closing {
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nuestroamor__closing p {
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  color: var(--color-gray);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.nuestroamor__closing span {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  display: block;
+  margin-top: var(--space-sm);
+}
+
+/* DECORACIONES */
+.nuestroamor::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-green);
+  margin: 0 auto var(--space-md);
+}
+
+.nuestroamor::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-green);
+  margin: var(--space-md) auto 0;
+}

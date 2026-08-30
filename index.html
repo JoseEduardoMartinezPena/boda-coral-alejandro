@@ -4,19 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <meta name="description" content="Coral & Alejandro - 06.03.2027" />
+    <meta name="description" content="Coral & Alejandro - Invitación de boda 06.03.2027" />
+    <meta name="theme-color" content="#C4CB20" />
     <title>Coral & Alejandro | 06.03.2027</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
 
   <body>
+    <div class="page">
     <!-- HERO SECTION -->
     <header class="hero">
       <div class="hero__image">
-        <img src="/src/assets/images/pareja.jpg" alt="Coral y Alejandro" />
+        <img src="/src/assets/images/hero_bg.webp" alt="Coral y Alejandro" loading="eager" />
       </div>
       <div class="hero__content">
         <h1 class="hero__title">¡Nos casamos!</h1>
         <p class="hero__date">6 de marzo 2027</p>
+        <p class="hero__text">En el corazón de Mérida</p>
       </div>
     </header>
 
@@ -24,19 +29,19 @@
       <!-- CONTADOR REGRESIVO -->
       <section id="contador" class="contador">
         <div class="contador__item">
-          <span class="contador__number">208</span>
+          <span class="contador__number" data-value="208">208</span>
           <span class="contador__label">días</span>
         </div>
         <div class="contador__item">
-          <span class="contador__number">18</span>
+          <span class="contador__number" data-value="18">18</span>
           <span class="contador__label">horas</span>
         </div>
         <div class="contador__item">
-          <span class="contador__number">1</span>
+          <span class="contador__number" data-value="1">1</span>
           <span class="contador__label">minuto</span>
         </div>
         <div class="contador__item">
-          <span class="contador__number">35</span>
+          <span class="contador__number" data-value="35">35</span>
           <span class="contador__label">segundos</span>
         </div>
       </section>
@@ -69,7 +74,7 @@
         </div>
 
         <div class="nuestroamor__image">
-          <img src="/src/assets/images/pareja-2.jpg" alt="Nuestro viaje" />
+          <img src="/src/assets/images/pareja-2.jpg" alt="Nuestro viaje" loading="lazy" />
         </div>
 
         <div class="nuestroamor__closing">
@@ -97,7 +102,7 @@
           <div class="location__details">
             <p><strong>Hacienda San Pedro Ochil</strong></p>
             <p>Carretera Mérida-Uxmal km 176.5</p>
-            <p>97825 Abalá</p>
+            <p>97825 Abalá, Yucatán</p>
           </div>
         </div>
 
@@ -129,11 +134,22 @@
         <div class="dresscode__colors">
           <h4>Sugerencia de colores</h4>
           <div class="color-palette">
-            <!-- Palette items with color swatches -->
-            <div class="color-item" style="background: #FF69B4"></div>
-            <div class="color-item" style="background: #8B4789"></div>
-            <div class="color-item" style="background: #FFD700"></div>
-            <!-- más colores -->
+            <div class="color-item" title="Verde oscuro"></div>
+            <div class="color-item" title="Naranja fuerte"></div>
+            <div class="color-item" title="Amarillo dorado"></div>
+            <div class="color-item" title="Verde medio"></div>
+            <div class="color-item" title="Rojo vino"></div>
+            <div class="color-item" title="Lavanda"></div>
+            <div class="color-item" title="Azul cielo"></div>
+            <div class="color-item" title="Marrón cálido"></div>
+            <div class="color-item" title="Teal turquesa"></div>
+            <div class="color-item" title="Rosa coral"></div>
+            <div class="color-item" title="Magenta"></div>
+            <div class="color-item" title="Púrpura oscuro"></div>
+            <div class="color-item" title="Naranja cálido"></div>
+            <div class="color-item" title="Azul claro"></div>
+            <div class="color-item" title="Naranja profundo"></div>
+            <div class="color-item" title="Marrón oscuro"></div>
           </div>
         </div>
 
@@ -171,8 +187,8 @@
           <div class="regalo-option regalo-option--transferencia">
             <h3>Transferencias</h3>
             <div class="transferencia-details">
-              <p><strong>Banco:</strong> BBVA</p>
-              <p><strong>Titular:</strong> Coral Casco</p>
+              <p><strong>Banco:</strong> <code>BBVA</code></p>
+              <p><strong>Titular:</strong> <code>Coral Casco</code></p>
               <p><strong>Clabe:</strong> <code>0126 5000 4794 606329</code></p>
               <p><strong>Cuenta:</strong> <code>047 946 0632</code></p>
             </div>
@@ -183,49 +199,88 @@
       <!-- RSVP FORM -->
       <section id="rsvp" class="rsvp">
         <h2>Confirma tu asistencia</h2>
-        <p class="rsvp__deadline">Porfavor confirma tu asistencia antes del 28 de Enero 2027</p>
+        <p class="rsvp__deadline">Por favor confirma tu asistencia antes del 28 de enero 2027</p>
 
-        <form class="rsvp__form" id="rsvpForm">
+        <!-- Netlify Forms -->
+        <form name="rsvp" class="rsvp__form" method="POST" netlify netlify-honeypot="bot-field">
+          <!-- Honeypot para evitar spam -->
+          <input type="hidden" name="bot-field" />
+          
+          <!-- Campo oculto para el nombre del formulario -->
+          <input type="hidden" name="form-name" value="rsvp" />
+
+          <div id="form-message" class="form-message" style="display: none;"></div>
+
           <div class="form__group">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" name="nombre" required />
+            <label for="nombre">Nombre Completo <span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="nombre" 
+              name="nombre" 
+              placeholder="Ej: Juan Pérez"
+              required 
+            />
           </div>
 
           <div class="form__group">
-            <label for="pases">Número de pases</label>
-            <input type="number" id="pases" name="pases" min="1" required />
+            <label for="pases">Número de pases <span class="required">*</span></label>
+            <input 
+              type="number" 
+              id="pases" 
+              name="pases" 
+              min="1" 
+              max="5" 
+              placeholder="¿Cuántas personas?"
+              required 
+            />
           </div>
 
           <div class="form__group">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" />
+            <input 
+              type="tel" 
+              id="telefono" 
+              name="telefono" 
+              placeholder="+52 999 123 4567"
+            />
           </div>
 
           <div class="form__group">
             <label for="hospedaje">¿Dónde te hospedarás?</label>
-            <input type="text" id="hospedaje" name="hospedaje" />
+            <input 
+              type="text" 
+              id="hospedaje" 
+              name="hospedaje" 
+              placeholder="Hotel, Airbnb, casa de familia, etc."
+            />
           </div>
 
           <div class="form__group">
             <label for="restricciones">¿Alguna restricción alimentaria?</label>
-            <textarea id="restricciones" name="restricciones" rows="3"></textarea>
+            <textarea 
+              id="restricciones" 
+              name="restricciones" 
+              placeholder="Vegetariano, alérgico a frutos secos, sin gluten, etc."
+              rows="3"
+            ></textarea>
           </div>
 
           <fieldset class="form__group form__group--radio">
-            <legend>¿Asistirás?</legend>
+            <legend>¿Asistirás? <span class="required">*</span></legend>
             <div class="radio-group">
               <label>
                 <input type="radio" name="asistencia" value="si" required />
-                Sí
+                Sí, estaré ahí
               </label>
               <label>
                 <input type="radio" name="asistencia" value="no" />
-                No
+                Lamentablemente no podré
               </label>
             </div>
           </fieldset>
 
-          <button type="submit" class="btn btn--primary">Enviar</button>
+          <button type="submit" class="btn btn--primary">Enviar Confirmación</button>
+          <p class="form-info">Tu respuesta será enviada de forma segura a través de Netlify Forms</p>
         </form>
       </section>
 
@@ -240,29 +295,29 @@
             <article class="hotel-card">
               <h4>Hotel Kavia Premium</h4>
               <p class="address">Calle 56 A 497, entre calles 45 y 47</p>
-              <p class="zona">Zona Paseo Montejo, Centro</p>
-              <p class="codigo">Código: <strong>[código]</strong></p>
+              <p class="zona">Zona Paseo Montejo, Centro, 97000 Mérida, Yuc.</p>
+              <p class="codigo">Código: <strong>Solicitar en recepción</strong></p>
             </article>
 
             <article class="hotel-card">
               <h4>Hotel Plaza by Kavia</h4>
-              <p class="address">Av. Paseo de Montejo, Nº481</p>
-              <p class="zona">Entre 39 y 41, Col. Centro</p>
-              <p class="codigo">Código: <strong>[código]</strong></p>
+              <p class="address">Av. Paseo de Montejo, Nº481 Entre 39 y 41</p>
+              <p class="zona">Col. Centro, 97000, Mérida, Yucatán</p>
+              <p class="codigo">Código: <strong>Solicitar en recepción</strong></p>
             </article>
 
             <article class="hotel-card">
               <h4>Hotel Hyatt</h4>
               <p class="address">Ave. Colón esq Calle 60</p>
-              <p class="zona">Zona Paseo Montejo</p>
-              <p class="codigo">Código: <strong>[código]</strong></p>
+              <p class="zona">Zona Paseo Montejo, 97000 Mérida, Yuc.</p>
+              <p class="codigo">Código: <strong>Solicitar en recepción</strong></p>
             </article>
 
             <article class="hotel-card">
               <h4>Hotel Chariot by Kavia</h4>
               <p class="address">Calle 56a entre 43 y 45</p>
-              <p class="zona">Zona Paseo Montejo, Centro</p>
-              <p class="codigo">Código: <strong>[código]</strong></p>
+              <p class="zona">Zona Paseo Montejo, Centro, 97000 Mérida, Yuc.</p>
+              <p class="codigo">Código: <strong>Solicitar en recepción</strong></p>
             </article>
           </div>
         </div>
@@ -292,7 +347,7 @@
             </article>
 
             <article class="restaurant-card">
-              <h4>Mugy - Cochinita y Lechón</h4>
+              <h4>Mugy - Cochinita</h4>
               <p>Teya Santa Lucía • Comida/Cena</p>
             </article>
 
@@ -338,7 +393,7 @@
           </div>
         </div>
 
-        <!-- LUGARES DE INTERES -->
+        <!-- LUGARES DE INTERÉS -->
         <div class="recomendaciones__category">
           <h3>Lugares de Interés</h3>
           <div class="lugares-list">
@@ -349,27 +404,27 @@
 
             <article class="lugar-card">
               <h4>Sisal</h4>
-              <p>54 min. de Mérida • Playa, Pueblo Mágico</p>
+              <p>54 min. • Playa, Pueblo Mágico</p>
             </article>
 
             <article class="lugar-card">
               <h4>Izamal</h4>
-              <p>1 hora y 16 min. de Mérida • Pueblo Mágico</p>
+              <p>1h 16 min. • Pueblo Mágico</p>
             </article>
 
             <article class="lugar-card">
               <h4>Uxmal</h4>
-              <p>1 hora de Mérida • Pirámides</p>
+              <p>1h de Mérida • Pirámides</p>
             </article>
 
             <article class="lugar-card">
               <h4>Chichén Itzá</h4>
-              <p>1 hora y 30min. de Mérida • Pirámides</p>
+              <p>1h 30 min. • Pirámides</p>
             </article>
 
             <article class="lugar-card">
               <h4>Cenote Mucuyche</h4>
-              <p>1 hora de Mérida • Cenote</p>
+              <p>1h de Mérida • Cenote</p>
             </article>
 
             <article class="lugar-card">
@@ -379,7 +434,7 @@
 
             <article class="lugar-card">
               <h4>Valladolid</h4>
-              <p>2 horas y 22 minutos de Mérida • Pueblo Mágico</p>
+              <p>2h 22 min. • Pueblo Mágico</p>
             </article>
           </div>
         </div>
@@ -389,20 +444,34 @@
       <section id="historia" class="historia">
         <h2>Nuestra Historia</h2>
         <div class="galeria">
-          <img src="/src/assets/images/historia-1.jpg" alt="Momento 1" />
-          <img src="/src/assets/images/historia-2.jpg" alt="Momento 2" />
-          <img src="/src/assets/images/historia-3.jpg" alt="Momento 3" />
-          <img src="/src/assets/images/historia-4.jpg" alt="Momento 4" />
-          <!-- más imágenes -->
+          <img src="/src/assets/images/nuestrahistoria1.webp" alt="Momento 1" loading="lazy" />
+          <img src="/src/assets/images/nuestrahistoria2.webp" alt="Momento 2" loading="lazy" />
+          <img src="/src/assets/images/nuestrahistoria3.webp" alt="Momento 3" loading="lazy" />
+          <img src="/src/assets/images/nuestrahistoria4.webp" alt="Momento 4" loading="lazy" />
+          <img src="/src/assets/images/nuestrahistoria5.webp" alt="Momento 5" loading="lazy" />
+          <img src="/src/assets/images/nuestrahistoria6.webp" alt="Momento 6" loading="lazy" />
+          <img src="/src/assets/images/nuestrahistoria7.webp" alt="Momento 7" loading="lazy" />
+          <img src="/src/assets/images/nuestrahistoria8.webp" alt="Momento 8" loading="lazy" />
         </div>
       </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <img src="/src/assets/images/footer.svg" alt="Footer decoration" />
+      <img src="/src/assets/images/footer.svg" alt="Decoración footer" />
+      <div class="footer-info">
+        <p>Coral & Alejandro</p>
+        <p>6 de marzo de 2027 • Abalá, Yucatán</p>
+      </div>
     </footer>
 
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" title="Volver arriba" aria-label="Volver al inicio de la página">
+      ↑
+    </button>
+    </div><!-- /.page -->
+
+    <!-- Scripts -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

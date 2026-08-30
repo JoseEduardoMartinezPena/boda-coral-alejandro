@@ -1,0 +1,108 @@
+/* ============================================
+   ITINERARIO SECTION (mobile-only)
+   ============================================ */
+
+.itinerario {
+  margin: var(--space-lg) 0;
+  padding: var(--space-md) 0;
+}
+
+.itinerario__title {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.itinerario__badge {
+  display: block;
+  width: fit-content;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 auto var(--space-md);
+}
+
+.itinerario__event {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.itinerario__event-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: var(--color-black);
+  margin-bottom: var(--space-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.itinerario__event-time {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--color-green);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.itinerario__location,
+.itinerario__reception {
+  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--color-cream);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-green);
+}
+
+.itinerario__location h4,
+.itinerario__reception h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--color-black);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.location__details {
+  margin: 0;
+}
+
+.location__details p {
+  font-size: var(--text-base);
+  color: var(--color-gray-dark);
+  margin-bottom: var(--space-xs);
+  font-weight: var(--font-weight-normal);
+}
+
+.location__details p:last-child {
+  margin-bottom: 0;
+}
+
+.location__details p strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+}
+
+.itinerario__reception p {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  margin: 0;
+  color: var(--color-gray-dark);
+}
+
+/* DECORACIÓN */
+.itinerario::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-green),
+    transparent
+  );
+  margin: var(--space-md) auto;
+}

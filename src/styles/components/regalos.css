@@ -1,0 +1,152 @@
+/* ============================================
+   REGALOS SECTION (mobile-only)
+   ============================================ */
+
+.regalos {
+  margin: var(--space-lg) 0;
+  padding: var(--space-md);
+  background-color: var(--color-cream);
+  border-radius: var(--radius-md);
+}
+
+.regalos__header {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.regalos__header h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.regalos__subtitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  color: var(--color-green);
+  font-style: italic;
+  font-weight: var(--font-weight-normal);
+  margin: 0;
+}
+
+.regalos__message {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  color: var(--color-gray-dark);
+  margin-bottom: var(--space-md);
+  line-height: 1.7;
+}
+
+.regalos__message span {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+}
+
+.regalos__options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.regalo-option {
+  background-color: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border-top: 3px solid transparent;
+}
+
+.regalo-option--tienda {
+  border-top-color: var(--color-green);
+}
+
+.regalo-option--transferencia {
+  border-top-color: #FF9800;
+}
+
+.regalo-option h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-black);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.regalo-option p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-dark);
+  margin-bottom: var(--space-xs);
+  line-height: 1.5;
+}
+
+.regalo-option p:last-child {
+  margin-bottom: 0;
+}
+
+/* EVENTO PALACIO DE HIERRO */
+.evento-code {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  margin-top: var(--space-sm);
+}
+
+.evento-code strong {
+  font-family: "Monaco", monospace;
+  font-size: 1.1em;
+  color: var(--color-green);
+}
+
+/* DETALLES DE TRANSFERENCIA */
+.transferencia-details {
+  margin: var(--space-sm) 0 0;
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+}
+
+.transferencia-details p {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.transferencia-details p:last-child {
+  margin-bottom: 0;
+}
+
+.transferencia-details strong {
+  flex-shrink: 0;
+  color: var(--color-black);
+}
+
+.transferencia-details code {
+  font-family: "Monaco", monospace;
+  color: var(--color-green);
+  background: transparent;
+  padding: 0;
+  font-weight: var(--font-weight-bold);
+  user-select: all;
+}
+
+/* BOTÓN COPIAR */
+.btn-copy {
+  display: inline-block;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  margin-left: var(--space-xs);
+  transition: all var(--transition-base);
+}
+
+.btn-copy.copied {
+  background-color: #4CAF50;
+}

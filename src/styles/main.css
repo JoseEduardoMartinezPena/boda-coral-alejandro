@@ -1,81 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@1,400..700&family=Beth+Ellen&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Homemade+Apple&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* ============================================
+   MAIN CSS - INVITACIÓN DE BODA
+   Coral & Alejandro | 06.03.2027
 
-:root {
-  --color-green: #C4CB20;
-  --color-cream: #f4f0e7;
-  --color-white: #ffffff;
-  --color-black: #161616;
+   Diseño ÚNICO para mobile. No existen versiones
+   "tablet" o "desktop": en pantallas más anchas
+   que el ancho estándar de un teléfono, el
+   contenido (.page) se centra, mantiene ese mismo
+   ancho, y queda enmarcado por una sombra ligera
+   sobre un fondo de color distinguible.
+   ============================================ */
 
-  --page-max-width: 480px;
+/* IMPORTAR VARIABLES */
+@import "./utilities/variables.css";
 
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
+/* IMPORTAR ESTILOS BASE (incluye el contenedor .page) */
+@import "./components/base.css";
 
-  --baskervville: 'Baskervville', sans-serif;
+/* IMPORTAR COMPONENTES */
+@import "./components/hero.css";
+@import "./components/contador.css";
+@import "./components/nuestroamor.css";
+@import "./components/itinerario.css";
+@import "./components/dresscode.css";
+@import "./components/regalos.css";
+@import "./components/rsvp.css";
+@import "./components/recomendaciones.css";
+@import "./components/historia.css";
+@import "./components/footer.css";
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+
+/* ESPACIADO */
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+
+.px-sm { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+.px-md { padding-left: var(--space-md); padding-right: var(--space-md); }
+
+.py-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+.py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+
+/* TEXTO */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.text-bold { font-weight: var(--font-weight-bold); }
+.text-semibold { font-weight: var(--font-weight-semibold); }
+.text-normal { font-weight: var(--font-weight-normal); }
+
+.text-green { color: var(--color-green); }
+.text-black { color: var(--color-black); }
+.text-gray { color: var(--color-gray); }
+.text-white { color: var(--color-white); }
+
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+
+/* DISPLAY */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+
+.grid { display: grid; }
+
+.inline-block { display: inline-block; }
+.block { display: block; }
+.hidden { display: none; }
+
+/* OPACIDAD */
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+/* BORDES */
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+
+.border { border: 1px solid var(--color-gray-light); }
+.border-green { border: 2px solid var(--color-green); }
+
+/* SOMBRAS */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* OBJETOS DE FIT */
+.object-cover { object-fit: cover; }
+.object-contain { object-fit: contain; }
+
+/* DESBORDAMIENTO */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+
+/* CURSOR */
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+
+/* POSICIÓN */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* Z-INDEX */
+.z-base { z-index: var(--z-base); }
+.z-dropdown { z-index: var(--z-dropdown); }
+.z-fixed { z-index: var(--z-fixed); }
+.z-modal { z-index: var(--z-modal); }
+
+/* ============================================
+   ANIMACIONES GLOBALES
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@keyframes slideIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-
-  font-family: Arial, sans-serif;
-
-  color: #1a1a1a;
-  background: #eeeeee;
+.fade-in {
+  animation: fadeIn var(--transition-slow);
 }
 
-img {
-  display: block;
-  max-width: 100%;
+.slide-in {
+  animation: slideIn var(--transition-slow);
 }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
+.pulse {
+  animation: pulse 2s infinite;
 }
 
-/* HERO */
+/* ============================================
+   SELECCIÓN DE TEXTO
+   ============================================ */
 
-/* CONTADOR */
-#contador {
+::selection {
   background-color: var(--color-green);
+  color: var(--color-white);
 }
 
-/* NUESTRO AMOR */
-#nuestroamor {
-  display: flex;
-  flex-direction: column;
-  max-width: 62%;
-  margin: 0 auto;
-  text-align: center;
-  font-family: var(--baskervville);
-  color: #767676;
-  font-size: 12px;
-  font-weight: 500;
+::-moz-selection {
+  background-color: var(--color-green);
+  color: var(--color-white);
 }
 
-#nuestroamor span {
-  font-weight: 700;
-}
+/* ============================================
+   PRINT
+   ============================================ */
 
-/* FOOTER */
-footer {
-  display: flex;
-  max-width: 95%;
-  margin: 0 auto;
-  justify-content: center;
+@media print {
+  main {
+    padding: 0;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  .back-to-top,
+  .btn,
+  input,
+  textarea {
+    display: none;
+  }
+
+  a {
+    text-decoration: underline;
+  }
 }

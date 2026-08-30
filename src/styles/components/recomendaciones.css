@@ -1,0 +1,158 @@
+/* ============================================
+   RECOMENDACIONES SECTION (mobile-only)
+   ============================================ */
+
+.recomendaciones {
+  margin: var(--space-lg) 0;
+  padding: var(--space-md) 0;
+}
+
+.recomendaciones > h2 {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.recomendaciones__category {
+  margin-bottom: var(--space-lg);
+}
+
+.recomendaciones__category::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-green);
+  margin: 0 auto var(--space-md);
+}
+
+.recomendaciones__category h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  color: var(--color-black);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-green);
+}
+
+/* LISTA DE HOTELES */
+.hoteles-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.hotel-card {
+  padding: var(--space-md);
+  background-color: var(--color-gray-light);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-green);
+}
+
+.hotel-card h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-black);
+  margin-bottom: var(--space-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.hotel-card .address {
+  font-size: var(--text-xs);
+  color: var(--color-gray-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.hotel-card .zona {
+  font-size: var(--text-xs);
+  color: var(--color-gray-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.hotel-card .codigo {
+  font-size: var(--text-xs);
+  color: var(--color-gray);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.hotel-card .codigo strong {
+  color: var(--color-green);
+  font-family: "Monaco", monospace;
+}
+
+/* GRID DE RESTAURANTES */
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.restaurant-card {
+  padding: var(--space-sm);
+  background-color: var(--color-cream);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border-top: 3px solid var(--color-green);
+}
+
+.restaurant-card h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-black);
+  margin-bottom: var(--space-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.restaurant-card p {
+  font-size: var(--text-xs);
+  color: var(--color-gray-dark);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* LISTA DE LUGARES */
+.lugares-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.lugar-card {
+  padding: var(--space-sm);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-light);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.lugar-card h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-black);
+  margin-bottom: var(--space-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.lugar-card p {
+  font-size: var(--text-xs);
+  color: var(--color-gray-dark);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* CATEGORÍAS ESPECIALES */
+.belleza-info {
+  padding: var(--space-md);
+  background-color: #FFF3E0;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid #FF9800;
+  text-align: center;
+  margin-top: var(--space-sm);
+}
+
+.belleza-info p {
+  font-style: italic;
+  color: var(--color-gray-dark);
+}

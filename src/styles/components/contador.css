@@ -1,0 +1,66 @@
+/* ============================================
+   CONTADOR REGRESIVO (mobile-only)
+   ============================================ */
+
+.contador {
+  background: linear-gradient(135deg, var(--color-green) 0%, #a8b819 100%);
+  padding: var(--space-lg) var(--space-sm);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: 0;
+}
+
+.contador__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.contador__number {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contador__label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.95;
+}
+
+/* ANIMACIÓN DE CAMBIO */
+@keyframes pulse-green {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.contador__number.updated {
+  animation: pulse-green 0.6s ease-in-out;
+}
+
+/* ESTADO FINAL (FIN DEL EVENTO) */
+.contador--completed {
+  background: linear-gradient(135deg, var(--color-gray-dark) 0%, var(--color-gray) 100%);
+}
+
+.contador--completed .contador__number,
+.contador--completed .contador__label {
+  opacity: 0.7;
+}

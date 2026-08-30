@@ -1,0 +1,115 @@
+/* ============================================
+   VARIABLES GLOBALES
+   ============================================ */
+
+:root {
+  /* COLORES PRINCIPALES */
+  --color-green: #C4CB20;
+  --color-cream: #f4f0e7;
+  --color-white: #ffffff;
+  --color-black: #161616;
+  --color-gray-light: #f5f5f5;
+  --color-gray: #767676;
+  --color-gray-dark: #4a4a4a;
+
+  /* PALETA DRESS CODE - COLORES EXACTOS FIGMA */
+  /* Fila 1: izq a der */
+  --color-dc-01: #93911B;  /* Verde oscuro */
+  --color-dc-02: #FF5E00;  /* Naranja fuerte */
+  --color-dc-03: #FDC600;  /* Amarillo dorado */
+  --color-dc-04: #3E8500;  /* Verde medio */
+  
+  /* Fila 2: izq a der */
+  --color-dc-05: #C30016;  /* Rojo vino */
+  --color-dc-06: #BF9ECA;  /* Lavanda suave */
+  --color-dc-07: #007ED2;  /* Azul cielo */
+  --color-dc-08: #BB7549;  /* Marrón cálido */
+  
+  /* Fila 3: izq a der */
+  --color-dc-09: #029B97;  /* Teal turquesa */
+  --color-dc-10: #F65E84;  /* Rosa coral */
+  --color-dc-11: #EE0075;  /* Magenta vibrante */
+  --color-dc-12: #8A0065;  /* Púrpura oscuro */
+  
+  /* Fila 4: izq a der */
+  --color-dc-13: #F67E19;  /* Naranja cálido */
+  --color-dc-14: #7EBAFB;  /* Azul cielo claro */
+  --color-dc-15: #D25100;  /* Naranja profundo */
+  --color-dc-16: #93400C;  /* Marrón oscuro */
+
+  /* TIPOGRAFÍAS */
+  --font-serif: "Baskervville", serif;
+  --font-script: "Beth Ellen", cursive;
+  --font-display: "Bodoni Moda", serif;
+  --font-handwriting: "Homemade Apple", cursive;
+  --font-sans: "Montserrat", sans-serif;
+  --font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* ESPACIADO */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* TAMAÑOS DE FUENTE */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3rem;
+
+  /* PESOS DE FUENTE */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* RADIOS DE BORDE */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* SOMBRAS */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+  /* TRANSICIONES */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+
+  /* LAYOUT */
+  /* Ancho estándar de un teléfono - el sitio SIEMPRE se ve así,
+     sin importar el tamaño de pantalla real */
+  --page-max-width: 480px;
+  --container-padding: 1.25rem;
+  --section-gap: 2.5rem;
+
+  /* Fondo exterior (visible solo en pantallas > 480px) */
+  --color-page-bg: #e9e5da;
+  --page-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
+
+  /* Z-INDEX */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-fixed: 1000;
+  --z-modal: 2000;
+}
+
+/* MEDIA QUERIES */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+  }
+}
