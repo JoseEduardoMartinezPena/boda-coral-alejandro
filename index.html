@@ -2,68 +2,406 @@
 <html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-
-    <meta
-      name="description"
-      content="Invitación de boda de Coral y Alejandro"
-    />
-
+    <meta name="description" content="Coral & Alejandro - 06.03.2027" />
     <title>Coral & Alejandro | 06.03.2027</title>
   </head>
 
   <body>
-    <main class="invitation">
-      <section class="hero">
-        <p class="hero__eyebrow">¡Nos casamos!</p>
-
-        <h1 class="hero__title">
-          Coral
-          <span>&</span>
-          Alejandro
-        </h1>
-
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <div class="hero__image">
+        <img src="/src/assets/images/pareja.jpg" alt="Coral y Alejandro" />
+      </div>
+      <div class="hero__content">
+        <h1 class="hero__title">¡Nos casamos!</h1>
         <p class="hero__date">6 de marzo 2027</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- CONTADOR REGRESIVO -->
+      <section id="contador" class="contador">
+        <div class="contador__item">
+          <span class="contador__number">208</span>
+          <span class="contador__label">días</span>
+        </div>
+        <div class="contador__item">
+          <span class="contador__number">18</span>
+          <span class="contador__label">horas</span>
+        </div>
+        <div class="contador__item">
+          <span class="contador__number">1</span>
+          <span class="contador__label">minuto</span>
+        </div>
+        <div class="contador__item">
+          <span class="contador__number">35</span>
+          <span class="contador__label">segundos</span>
+        </div>
       </section>
 
-      <section class="section">
-        <h2>Countdown</h2>
+      <!-- NUESTRO AMOR -->
+      <section id="nuestroamor" class="nuestroamor">
+        <div class="nuestroamor__text">
+          <p>
+            Nuestro amor comenzó con nosotros, pero
+            <span>llegó hasta aquí gracias a muchos.</span>
+          </p>
+          
+          <p>
+            A nuestros padres,
+            <br />
+            <span>Yolanda González y Alejandro Casco</span>
+            <br />
+            <span>&</span>
+            <br />
+            <span>Verónica López y Mazaru Lezama</span>
+          </p>
+
+          <p>
+            Y nuestros padrinos,
+            <br />
+            <span>Bárbara Macías y Alejandro Casco</span>
+            <br />
+            por enseñarnos, acompañarnos y ser parte de todo lo que somos.
+          </p>
+        </div>
+
+        <div class="nuestroamor__image">
+          <img src="/src/assets/images/pareja-2.jpg" alt="Nuestro viaje" />
+        </div>
+
+        <div class="nuestroamor__closing">
+          <p>
+            Con su amor y rodeados de quienes más queremos,
+            <br />
+            <span>queremos celebrar nuestra historia y<br />todo lo que está por venir.</span>
+          </p>
+        </div>
       </section>
 
-      <section class="section">
-        <h2>Nuestra familia</h2>
+      <!-- ITINERARIO Y CEREMONIA -->
+      <section id="itinerario" class="itinerario">
+        <h2 class="itinerario__title">Itinerario</h2>
+        
+        <div class="itinerario__badge">no niños</div>
+
+        <div class="itinerario__event">
+          <h3 class="itinerario__event-title">Anfiteatro Ceremonia</h3>
+          <p class="itinerario__event-time">17:00hrs</p>
+        </div>
+
+        <div class="itinerario__location">
+          <h4>Ubicación</h4>
+          <div class="location__details">
+            <p><strong>Hacienda San Pedro Ochil</strong></p>
+            <p>Carretera Mérida-Uxmal km 176.5</p>
+            <p>97825 Abalá</p>
+          </div>
+        </div>
+
+        <div class="itinerario__reception">
+          <h4>Fiesta</h4>
+          <p>
+            A continuación de la ceremonia, los invitamos cordialmente a acompañarnos 
+            en el cóctel y la recepción, los cuales tendrán lugar en el mismo recinto.
+          </p>
+        </div>
       </section>
 
-      <section class="section">
-        <h2>Itinerario</h2>
+      <!-- DRESS CODE -->
+      <section id="dresscode" class="dresscode">
+        <h2 class="dresscode__title">Dresscode</h2>
+        <p class="dresscode__subtitle">Formal</p>
+        
+        <div class="dresscode__guide">
+          <div class="dresscode__item">
+            <h4>Mujeres</h4>
+            <p>Largo formal</p>
+          </div>
+          <div class="dresscode__item">
+            <h4>Hombres</h4>
+            <p>Guayabera (no manta) o traje de lino</p>
+          </div>
+        </div>
+
+        <div class="dresscode__colors">
+          <h4>Sugerencia de colores</h4>
+          <div class="color-palette">
+            <!-- Palette items with color swatches -->
+            <div class="color-item" style="background: #FF69B4"></div>
+            <div class="color-item" style="background: #8B4789"></div>
+            <div class="color-item" style="background: #FFD700"></div>
+            <!-- más colores -->
+          </div>
+        </div>
+
+        <div class="dresscode__restrictions">
+          <p>
+            <strong>Para mantener la armonía</strong> de nuestra celebración, agradecemos 
+            a nuestros invitados evitar los siguientes tonos:
+          </p>
+          <ul>
+            <li>Blanco, marfil y rosa claro (reservados para la novia)</li>
+            <li>Verde manzana y morado (para damas de honor)</li>
+            <li>Verde y beige (para caballeros de honor)</li>
+          </ul>
+        </div>
       </section>
 
-      <section class="section">
-        <h2>Dress code</h2>
+      <!-- REGALOS -->
+      <section id="regalos" class="regalos">
+        <div class="regalos__header">
+          <h2>Regalos</h2>
+          <p class="regalos__subtitle">Un gesto de amor</p>
+        </div>
+
+        <p class="regalos__message">
+          Tu presencia es <span>nuestro mejor regalo.</span>
+        </p>
+
+        <div class="regalos__options">
+          <div class="regalo-option regalo-option--tienda">
+            <h3>Mesa de Regalos</h3>
+            <p>Palacio de Hierro</p>
+            <p class="evento-code">No. evento: <strong>5002200</strong></p>
+          </div>
+
+          <div class="regalo-option regalo-option--transferencia">
+            <h3>Transferencias</h3>
+            <div class="transferencia-details">
+              <p><strong>Banco:</strong> BBVA</p>
+              <p><strong>Titular:</strong> Coral Casco</p>
+              <p><strong>Clabe:</strong> <code>0126 5000 4794 606329</code></p>
+              <p><strong>Cuenta:</strong> <code>047 946 0632</code></p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="section">
-        <h2>Regalos</h2>
-      </section>
-
-      <section class="section">
+      <!-- RSVP FORM -->
+      <section id="rsvp" class="rsvp">
         <h2>Confirma tu asistencia</h2>
+        <p class="rsvp__deadline">Porfavor confirma tu asistencia antes del 28 de Enero 2027</p>
+
+        <form class="rsvp__form" id="rsvpForm">
+          <div class="form__group">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+
+          <div class="form__group">
+            <label for="pases">Número de pases</label>
+            <input type="number" id="pases" name="pases" min="1" required />
+          </div>
+
+          <div class="form__group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" />
+          </div>
+
+          <div class="form__group">
+            <label for="hospedaje">¿Dónde te hospedarás?</label>
+            <input type="text" id="hospedaje" name="hospedaje" />
+          </div>
+
+          <div class="form__group">
+            <label for="restricciones">¿Alguna restricción alimentaria?</label>
+            <textarea id="restricciones" name="restricciones" rows="3"></textarea>
+          </div>
+
+          <fieldset class="form__group form__group--radio">
+            <legend>¿Asistirás?</legend>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="asistencia" value="si" required />
+                Sí
+              </label>
+              <label>
+                <input type="radio" name="asistencia" value="no" />
+                No
+              </label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn--primary">Enviar</button>
+        </form>
       </section>
 
-      <section class="section">
+      <!-- RECOMENDACIONES -->
+      <section id="recomendaciones" class="recomendaciones">
         <h2>Recomendaciones en Mérida</h2>
+
+        <!-- HOSPEDAJE -->
+        <div class="recomendaciones__category">
+          <h3>Hospedaje</h3>
+          <div class="hoteles-list">
+            <article class="hotel-card">
+              <h4>Hotel Kavia Premium</h4>
+              <p class="address">Calle 56 A 497, entre calles 45 y 47</p>
+              <p class="zona">Zona Paseo Montejo, Centro</p>
+              <p class="codigo">Código: <strong>[código]</strong></p>
+            </article>
+
+            <article class="hotel-card">
+              <h4>Hotel Plaza by Kavia</h4>
+              <p class="address">Av. Paseo de Montejo, Nº481</p>
+              <p class="zona">Entre 39 y 41, Col. Centro</p>
+              <p class="codigo">Código: <strong>[código]</strong></p>
+            </article>
+
+            <article class="hotel-card">
+              <h4>Hotel Hyatt</h4>
+              <p class="address">Ave. Colón esq Calle 60</p>
+              <p class="zona">Zona Paseo Montejo</p>
+              <p class="codigo">Código: <strong>[código]</strong></p>
+            </article>
+
+            <article class="hotel-card">
+              <h4>Hotel Chariot by Kavia</h4>
+              <p class="address">Calle 56a entre 43 y 45</p>
+              <p class="zona">Zona Paseo Montejo, Centro</p>
+              <p class="codigo">Código: <strong>[código]</strong></p>
+            </article>
+          </div>
+        </div>
+
+        <!-- RESTAURANTES Y ALIMENTOS -->
+        <div class="recomendaciones__category">
+          <h3>Alimentos</h3>
+          <div class="restaurants-grid">
+            <article class="restaurant-card">
+              <h4>Tho Aperitivo</h4>
+              <p>Paseo de Montejo • Desayuno</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Justo Bread</h4>
+              <p>Paseo de Montejo • Desayuno/Comida</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Te Extraño, Extraño</h4>
+              <p>Centro • Desayuno/Comida</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Chaya Maya</h4>
+              <p>Nuevo San Fernando • Comida Yucateca</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Mugy - Cochinita y Lechón</h4>
+              <p>Teya Santa Lucía • Comida/Cena</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Yerba Santa</h4>
+              <p>Centro • Comida Yucateca</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Nakuh</h4>
+              <p>Centro • Comida/Cena</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Micaela Mar y Leña</h4>
+              <p>Centro • Comida/Cena</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Holoch</h4>
+              <p>Santa Lucía/Centro • Comida/Cena</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Carajillo</h4>
+              <p>Paseo de Montejo • Cena</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Oliva</h4>
+              <p>Centro • Comida/Cena</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>La Mata</h4>
+              <p>Terraza-Roof / Centro • Comida/Cena</p>
+            </article>
+
+            <article class="restaurant-card">
+              <h4>Ariadna</h4>
+              <p>Centro • Comida/Cena</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- LUGARES DE INTERES -->
+        <div class="recomendaciones__category">
+          <h3>Lugares de Interés</h3>
+          <div class="lugares-list">
+            <article class="lugar-card">
+              <h4>Progreso</h4>
+              <p>30 min. de Mérida • Playa</p>
+            </article>
+
+            <article class="lugar-card">
+              <h4>Sisal</h4>
+              <p>54 min. de Mérida • Playa, Pueblo Mágico</p>
+            </article>
+
+            <article class="lugar-card">
+              <h4>Izamal</h4>
+              <p>1 hora y 16 min. de Mérida • Pueblo Mágico</p>
+            </article>
+
+            <article class="lugar-card">
+              <h4>Uxmal</h4>
+              <p>1 hora de Mérida • Pirámides</p>
+            </article>
+
+            <article class="lugar-card">
+              <h4>Chichén Itzá</h4>
+              <p>1 hora y 30min. de Mérida • Pirámides</p>
+            </article>
+
+            <article class="lugar-card">
+              <h4>Cenote Mucuyche</h4>
+              <p>1 hora de Mérida • Cenote</p>
+            </article>
+
+            <article class="lugar-card">
+              <h4>Cenote San Ignacio</h4>
+              <p>Chocholá, Yucatán • Cenote</p>
+            </article>
+
+            <article class="lugar-card">
+              <h4>Valladolid</h4>
+              <p>2 horas y 22 minutos de Mérida • Pueblo Mágico</p>
+            </article>
+          </div>
+        </div>
       </section>
 
-      <section class="section">
-        <h2>Nuestra historia</h2>
+      <!-- NUESTRA HISTORIA -->
+      <section id="historia" class="historia">
+        <h2>Nuestra Historia</h2>
+        <div class="galeria">
+          <img src="/src/assets/images/historia-1.jpg" alt="Momento 1" />
+          <img src="/src/assets/images/historia-2.jpg" alt="Momento 2" />
+          <img src="/src/assets/images/historia-3.jpg" alt="Momento 3" />
+          <img src="/src/assets/images/historia-4.jpg" alt="Momento 4" />
+          <!-- más imágenes -->
+        </div>
       </section>
     </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <img src="/src/assets/images/footer.svg" alt="Footer decoration" />
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>

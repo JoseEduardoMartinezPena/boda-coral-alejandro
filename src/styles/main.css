@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@1,400..700&family=Beth+Ellen&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Homemade+Apple&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-green: #C4CB20;
+  --color-cream: #f4f0e7;
+  --color-white: #ffffff;
+  --color-black: #161616;
+
+  --page-max-width: 480px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+
+  --baskervville: 'Baskervville', sans-serif;
+}
+
 *,
 *::before,
 *::after {
@@ -30,54 +48,34 @@ select {
   font: inherit;
 }
 
-.invitation {
-  width: 100%;
-  max-width: 480px;
-  margin-inline: auto;
+/* HERO */
 
-  background: #ffffff;
+/* CONTADOR */
+#contador {
+  background-color: var(--color-green);
 }
 
-.hero {
-  min-height: 100svh;
-
+/* NUESTRO AMOR */
+#nuestroamor {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 2rem;
-
+  max-width: 62%;
+  margin: 0 auto;
   text-align: center;
+  font-family: var(--baskervville);
+  color: #767676;
+  font-size: 12px;
+  font-weight: 500;
 }
 
-.hero__eyebrow {
-  margin: 0 0 1rem;
+#nuestroamor span {
+  font-weight: 700;
 }
 
-.hero__title {
-  margin: 0;
-
-  font-size: 3rem;
-  line-height: 0.9;
-}
-
-.hero__title span {
-  display: block;
-  font-size: 1.5rem;
-}
-
-.hero__date {
-  margin-top: 1.5rem;
-}
-
-.section {
-  min-height: 60vh;
-  padding: 4rem 2rem;
-
-  border-top: 1px solid #dddddd;
-}
-
-.section h2 {
-  margin: 0;
+/* FOOTER */
+footer {
+  display: flex;
+  max-width: 95%;
+  margin: 0 auto;
+  justify-content: center;
 }
