@@ -155,3 +155,16 @@
   margin-top: var(--space-sm);
   cursor: pointer;
 }
+
+/* IMAGEN DE INSPIRACIÓN */
+.dresscode__inspiration {
+  margin-top: var(--space-md);
+}
+ 
+.dresscode__inspiration img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}

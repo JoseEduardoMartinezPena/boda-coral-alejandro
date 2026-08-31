@@ -32,6 +32,40 @@
   filter: brightness(1.05);
 }
 
+/* ============================================
+   MOSAICO ASIMÉTRICO
+   Las fotos originales tienen proporciones muy
+   distintas (retrato, cuadradas, panorámicas).
+   Cada modificador reserva el número de celdas
+   que le corresponde dentro de la grilla de 4
+   columnas, en vez de forzarlas todas al mismo
+   tamaño.
+   ============================================ */
+ 
+/* Foto protagonista: ocupa 2 columnas x 2 filas */
+.historia__mosaic-item--feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+ 
+/* Foto vertical: 1 columna x 2 filas */
+.historia__mosaic-item--tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+ 
+/* Foto cuadrada pequeña: 1 columna x 1 fila */
+.historia__mosaic-item--square {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+ 
+/* Foto panorámica: 2 columnas x 1 fila */
+.historia__mosaic-item--wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
 /* LIGHTBOX / MODAL */
 .lightbox {
   display: none;

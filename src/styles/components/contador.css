@@ -3,8 +3,9 @@
    ============================================ */
 
 .contador {
-  background: linear-gradient(135deg, var(--color-green) 0%, #a8b819 100%);
-  padding: var(--space-lg) var(--space-sm);
+  background-color: var(--color-green-conteo);
+  box-shadow: 1px 4px 4px 0px rgba(0,0,0,0.25) inset;
+  padding: var(--space-md) var(--space-md);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -24,7 +25,7 @@
 
 .contador__number {
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-white);
   line-height: 1;
@@ -33,12 +34,12 @@
 
 .contador__label {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
-  font-weight: var(--font-weight-bold);
+  font-style: italic;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-light);
   color: var(--color-white);
   text-transform: uppercase;
   letter-spacing: 1px;
-  opacity: 0.95;
 }
 
 /* ANIMACIÓN DE CAMBIO */

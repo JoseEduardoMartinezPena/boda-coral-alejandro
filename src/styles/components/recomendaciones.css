@@ -7,74 +7,100 @@
   padding: var(--space-md) 0;
 }
 
-.recomendaciones > h2 {
+.recomendaciones__title {
+  position: relative;
+}
+
+.recomendaciones__image {
+  margin-bottom: var(--space-lg);
+}
+
+.recomendaciones__title img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.recomendaciones__title h2 {
+  position: absolute;
+  top: 35%;
+  right: 15%;
   text-align: center;
   margin-bottom: var(--space-md);
+  color: var(--color-white);
+  font-family: var(--font-script);
+  line-height: 0.6;
+  text-shadow: 2px 4px 3.8px rgba(0,0,0,0.4);
+  font-weight: var(--font-weight-normal);
+}
+
+.recomendaciones h2 span {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 }
 
 .recomendaciones__category {
   margin-bottom: var(--space-lg);
 }
 
-.recomendaciones__category::before {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 1px;
-  background-color: var(--color-green);
-  margin: 0 auto var(--space-md);
-}
-
 .recomendaciones__category h3 {
-  font-family: var(--font-sans);
-  font-size: var(--text-xl);
-  color: var(--color-black);
-  text-transform: uppercase;
+  font-family: var(--font-script);
+  font-size: var(--text-2xl);
+  text-align: center;
   letter-spacing: 1px;
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-sm);
-  border-bottom: 2px solid var(--color-green);
+  color: #454444;
+  margin-bottom: 10px;
+  font-weight: var(--font-weight-normal);
 }
 
 /* LISTA DE HOTELES */
+.hospedaje-title p {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--text-xs)
+}
+
 .hoteles-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  background-color: var(--color-gray-light);
+  padding: var(--space-lg) var(--space-lg);
+  border-radius: var(--radius-lg);
 }
 
 .hotel-card {
-  padding: var(--space-md);
-  background-color: var(--color-gray-light);
-  border-radius: var(--radius-lg);
-  border-left: 4px solid var(--color-green);
+  font-family: var(--font-sans);
+  font-style: italic;
+  color: var(--color-black);
+  text-align: center;
 }
 
 .hotel-card h4 {
-  font-family: var(--font-sans);
   font-size: var(--text-base);
   color: var(--color-black);
   margin-bottom: var(--space-sm);
   font-weight: var(--font-weight-bold);
 }
 
-.hotel-card .address {
-  font-size: var(--text-xs);
-  color: var(--color-gray-dark);
-  margin-bottom: var(--space-xs);
+.hotel-card span {
+  font-weight: var(--font-weight-normal);
 }
 
-.hotel-card .zona {
+.hotel-card .address {
   font-size: var(--text-xs);
-  color: var(--color-gray-dark);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  color: var(--color-black);
 }
 
 .hotel-card .codigo {
   font-size: var(--text-xs);
-  color: var(--color-gray);
   font-weight: var(--font-weight-bold);
   margin: 0;
+  color: var(--color-black);
 }
 
 .hotel-card .codigo strong {
@@ -82,27 +108,48 @@
   font-family: "Monaco", monospace;
 }
 
+/* BELLEZA */
+.belleza-title {
+  position: relative;
+}
+
+.belleza-title img {
+  position: absolute;
+  top: 0;
+  right: 6rem;
+}
+
+.belleza-cont {
+  padding: 0 var(--space-lg);
+  font-style: italic;
+  font-size: 10px;
+  text-align: center;
+}
+
 /* GRID DE RESTAURANTES */
 .restaurants-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-sm);
+  padding: var(--space-sm);
+  background-color: var(--color-gray-light);
+  border-radius: var(--radius-lg);
 }
 
-.restaurant-card {
-  padding: var(--space-sm);
-  background-color: var(--color-cream);
-  border-radius: var(--radius-lg);
-  text-align: center;
-  border-top: 3px solid var(--color-green);
+.restaurants-title {
+  color: var(--color-green);
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-bold);
+  font-style: italic;
+  font-size: 17px;
 }
 
 .restaurant-card h4 {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
   color: var(--color-black);
-  margin-bottom: var(--space-xs);
   font-weight: var(--font-weight-bold);
+  font-style: italic;
 }
 
 .restaurant-card p {
@@ -116,15 +163,18 @@
 .lugares-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-sm);
+  column-gap: 15px;
+  padding: var(--space-lg) var(--space-sm);
+  background-color: var(--color-gray-light);
+  border-radius: var(--radius-lg);
 }
 
 .lugar-card {
-  padding: var(--space-sm);
-  background-color: var(--color-white);
+  padding: 5px;
   border: 2px solid var(--color-gray-light);
   border-radius: var(--radius-lg);
   text-align: center;
+  font-style: italic;
 }
 
 .lugar-card h4 {
@@ -136,7 +186,7 @@
 }
 
 .lugar-card p {
-  font-size: var(--text-xs);
+  font-size: 10px;
   color: var(--color-gray-dark);
   margin: 0;
   line-height: 1.5;

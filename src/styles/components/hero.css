@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+.hero p {
+  margin-bottom: 0;
+}
+
 .hero__image {
   position: relative;
   width: 100%;
@@ -26,39 +30,49 @@
 }
 
 .hero__content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  margin-top: -17rem;
+  padding: 2rem var(--space-sm) var(--space-md);
+  padding-top: 15rem;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.95) 60%,
+    rgba(255, 255, 255, 1) 48%,
     rgba(255, 255, 255, 1) 100%
   );
-  padding: 2rem var(--space-sm) var(--space-md);
   text-align: center;
 }
 
 .hero__title {
-  font-family: var(--font-script);
-  font-size: 2.5rem;
-  font-weight: var(--font-weight-normal);
+  margin-top: var(--space-sm);
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-bold);
   color: var(--color-green);
   margin-bottom: var(--space-xs);
   letter-spacing: 1px;
 }
 
 .hero__date {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-gray-dark);
-  letter-spacing: 2px;
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .hero__text {
   font-family: var(--font-handwriting);
+  font-size: var(--text-lg);
+  color: var(--color-black);
   text-decoration: underline;
   text-decoration-color: var(--color-green);
+  text-underline-offset: 6px;
+}
+
+.hero__logo {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 0; /* anula el radio global de <img> en base.css */
 }

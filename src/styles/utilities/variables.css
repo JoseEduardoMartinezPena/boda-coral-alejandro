@@ -4,11 +4,13 @@
 
 :root {
   /* COLORES PRINCIPALES */
-  --color-green: #C4CB20;
+  --color-green: #C5CA3A;
+  --color-green-conteo: #C4CB20;
   --color-cream: #f4f0e7;
-  --color-white: #ffffff;
-  --color-black: #161616;
-  --color-gray-light: #f5f5f5;
+  --color-white: #fff;
+  --color-dark: #161616;
+  --color-black: #000;
+  --color-gray-light: #f3f3f3;
   --color-gray: #767676;
   --color-gray-dark: #4a4a4a;
 

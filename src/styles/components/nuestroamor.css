@@ -3,8 +3,8 @@
    ============================================ */
 
 .nuestroamor {
-  margin: var(--space-lg) 0;
-  padding: var(--space-md) 0;
+  margin: var(--space-md) 0;
+  padding: 0;
 }
 
 .nuestroamor__text {
@@ -15,26 +15,24 @@
 
 .nuestroamor__text p {
   font-family: var(--font-serif);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--color-gray);
   font-weight: var(--font-weight-normal);
-  line-height: 1.8;
-  margin-bottom: var(--space-md);
+  line-height: 1.4;
+  margin-bottom: var(--space-xs);
 }
 
 .nuestroamor__text p:first-child {
   margin-top: 0;
 }
 
-.nuestroamor__text span {
-  font-weight: var(--font-weight-bold);
-  color: var(--color-black);
-  display: block;
+.nuestroamor__text p:last-child {
+  font-size: var(--text-xs);
 }
 
-.nuestroamor__text p:nth-child(2) span {
-  font-size: 1.2em;
-  margin: var(--space-sm) 0;
+.nuestroamor__text span {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-sm);
 }
 
 .nuestroamor__text p:nth-child(2) span:nth-child(3) {
@@ -46,16 +44,84 @@
 
 .nuestroamor__image {
   width: 100%;
-  margin: var(--space-lg) 0;
-  aspect-ratio: 1 / 1;
+  margin: var(--space-sm) 0;
 }
 
 .nuestroamor__image img {
+  margin: 0 auto;
+}
+
+/* ============================================
+   GALERÍA COLLAGE (5 fotos, estilo scrapbook)
+   Lienzo de posición relativa; cada foto se
+   posiciona de forma absoluta y asimétrica.
+   Las clases --1 a --5 y [data-collage-index]
+   quedan listas para animarse después (JS).
+   ============================================ */
+.nuestroamor__collage {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 380px;
+  margin: var(--space-lg) 0 var(--space-xl);
+}
+ 
+.nuestroamor__collage-item {
+  position: absolute;
   object-fit: cover;
-  border-radius: var(--radius-lg);
+  border: 6px solid var(--color-white);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-lg);
+  background-color: var(--color-gray-light);
+}
+ 
+/* Foto grande, ancla superior izquierda */
+.nuestroamor__collage-item--1 {
+  top: 0;
+  left: 0;
+  width: 58%;
+  height: 62%;
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+ 
+/* Foto vertical, esquina superior derecha */
+.nuestroamor__collage-item--2 {
+  top: 2%;
+  right: 0;
+  width: 40%;
+  height: 44%;
+  transform: rotate(5deg);
+  z-index: 3;
+}
+ 
+/* Foto vertical, esquina inferior derecha */
+.nuestroamor__collage-item--3 {
+  bottom: 0;
+  right: 2%;
+  width: 46%;
+  height: 48%;
+  transform: rotate(-3deg);
+  z-index: 4;
+}
+ 
+/* Foto inferior izquierda, ligeramente detrás */
+.nuestroamor__collage-item--4 {
+  bottom: 2%;
+  left: 4%;
+  width: 44%;
+  height: 40%;
+  transform: rotate(4deg);
+  z-index: 1;
+}
+ 
+/* Foto pequeña central, encima de todas (acento) */
+.nuestroamor__collage-item--5 {
+  top: 42%;
+  left: 32%;
+  width: 32%;
+  height: 28%;
+  transform: rotate(-8deg);
+  z-index: 5;
 }
 
 .nuestroamor__closing {
@@ -66,7 +132,7 @@
 
 .nuestroamor__closing p {
   font-family: var(--font-serif);
-  font-size: var(--text-base);
+  font-size: var(--text-xs);
   color: var(--color-gray);
   font-weight: var(--font-weight-normal);
   line-height: 1.8;
@@ -78,23 +144,4 @@
   color: var(--color-black);
   display: block;
   margin-top: var(--space-sm);
-}
-
-/* DECORACIONES */
-.nuestroamor::before {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background-color: var(--color-green);
-  margin: 0 auto var(--space-md);
-}
-
-.nuestroamor::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background-color: var(--color-green);
-  margin: var(--space-md) auto 0;
 }

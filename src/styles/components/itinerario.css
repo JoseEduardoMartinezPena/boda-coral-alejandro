@@ -106,3 +106,17 @@
   );
   margin: var(--space-md) auto;
 }
+
+/* ICONOS ILUSTRATIVOS (línea, estilo hacienda) */
+.itinerario__icon {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-md) 0;
+}
+
+.itinerario__icon img {
+  width: 120px;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}

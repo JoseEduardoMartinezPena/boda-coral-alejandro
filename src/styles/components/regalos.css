@@ -27,6 +27,18 @@
   margin: 0;
 }
 
+.regalos__image {
+  margin-bottom: var(--space-md);
+}
+
+.regalos__image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
 .regalos__message {
   text-align: center;
   font-family: var(--font-serif);
