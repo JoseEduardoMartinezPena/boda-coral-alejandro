@@ -15,10 +15,10 @@ class Countdown {
   constructor() {
     this.targetDate = new Date("2027-03-06T17:00:00-06:00").getTime(); // Hora de ceremonia (UTC-6)
     this.elements = {
-      dias: document.querySelector('[data-value="208"]'),
-      horas: document.querySelector('[data-value="18"]'),
-      minutos: document.querySelector('[data-value="1"]'),
-      segundos: document.querySelector('[data-value="35"]'),
+      dias: document.querySelector('[data-countdown="days"]'),
+      horas: document.querySelector('[data-countdown="hours"]'),
+      minutos: document.querySelector('[data-countdown="minutes"]'),
+      segundos: document.querySelector('[data-countdown="seconds"]'),
     };
     this.init();
   }
@@ -69,41 +69,12 @@ class Countdown {
 }
 
 /**
- * 2. BACK TO TOP BUTTON
- * Botón para volver al inicio de la página
- */
-class BackToTop {
-  constructor() {
-    this.button = document.getElementById("backToTop");
-    if (!this.button) return;
-
-    window.addEventListener("scroll", () => this.toggleVisibility());
-    this.button.addEventListener("click", () => this.scroll());
-  }
-
-  toggleVisibility() {
-    if (window.scrollY > 300) {
-      this.button.classList.add("visible");
-    } else {
-      this.button.classList.remove("visible");
-    }
-  }
-
-  scroll() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-}
-
-/**
- * 3. GALERÍA LIGHTBOX
+ * 2. GALERÍA LIGHTBOX
  * Abre imágenes en modal cuando se hacen click
  */
 class Gallery {
   constructor() {
-    this.images = document.querySelectorAll(".galeria img");
+    this.images = document.querySelectorAll("[data-lightbox]");
     this.currentIndex = 0;
     this.init();
   }
@@ -189,7 +160,7 @@ class Gallery {
 }
 
 /**
- * 4. FORMULARIO RSVP - NETLIFY FORMS
+ * 3. FORMULARIO RSVP - NETLIFY FORMS
  * Manejo de envío y mensajes de confirmación
  */
 class RSVPForm {
@@ -198,45 +169,85 @@ class RSVPForm {
     if (!this.form) return;
 
     this.messageElement = document.getElementById("form-message");
+    this.submitButton = this.form.querySelector('button[type="submit"]');
+
     this.form.addEventListener("submit", (e) => this.handleSubmit(e));
   }
 
-  handleSubmit(e) {
-    // Netlify maneja el submit automáticamente
-    // Aquí podemos agregar validación personalizada o UX mejorada
+  async handleSubmit(e) {
+    e.preventDefault();
 
-    const nombre = this.form.querySelector('input[name="nombre"]').value;
-    const asistencia = this.form.querySelector(
+    // Validación nativa del navegador
+    if (!this.form.checkValidity()) {
+      this.form.reportValidity();
+      return;
+    }
+
+    const nombreInput = this.form.querySelector('input[name="nombre"]');
+
+    const asistenciaInput = this.form.querySelector(
       'input[name="asistencia"]:checked',
-    ).value;
+    );
 
-    // Mostrar confirmación (opcional, solo para UX)
-    if (nombre && asistencia) {
+    const nombre = nombreInput.value.trim();
+    const asistencia = asistenciaInput?.value;
+
+    this.setSubmitting(true);
+
+    try {
+      const formData = new FormData(this.form);
+
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error HTTP: ${response.status}`);
+      }
+
       const mensaje =
         asistencia === "si"
           ? `¡Gracias ${nombre}, te esperamos! 💚`
           : `Entendemos ${nombre}, ¡los extrañaremos! 💔`;
 
-      // Netlify enviará el formulario
-      // setTimeout(() => {
-      //   this.showMessage(mensaje, "success");
-      // }, 500);
+      this.showMessage(mensaje, "success");
+
+      this.form.reset();
+    } catch (error) {
+      console.error("Error al enviar RSVP:", error);
+
+      this.showMessage(
+        "No pudimos enviar tu confirmación. Por favor intenta nuevamente.",
+        "error",
+      );
+    } finally {
+      this.setSubmitting(false);
     }
+  }
+
+  setSubmitting(isSubmitting) {
+    this.submitButton.disabled = isSubmitting;
+
+    this.submitButton.textContent = isSubmitting ? "Enviando..." : "Enviar";
   }
 
   showMessage(text, type) {
     this.messageElement.textContent = text;
     this.messageElement.className = `form-message form-message--${type}`;
-    this.messageElement.style.display = "block";
+    this.messageElement.hidden = false;
 
     setTimeout(() => {
-      this.messageElement.style.display = "none";
+      this.messageElement.hidden = true;
     }, 5000);
   }
 }
 
 /**
- * 5. SMOOTH SCROLL PARA LINKS INTERNOS
+ * 4. SMOOTH SCROLL PARA LINKS INTERNOS
  */
 class SmoothScroll {
   constructor() {
@@ -258,46 +269,112 @@ class SmoothScroll {
 }
 
 /**
- * 6. ANIMACIONES EN SCROLL (Intersection Observer)
+ * 5. ANIMACIONES EN SCROLL (Intersection Observer)
  */
+
 class ScrollAnimations {
   constructor() {
-    this.observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1,
-    };
+    this.elements = document.querySelectorAll("[data-animate]");
+
+    if (!this.elements.length) return;
+
+    this.prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (this.prefersReducedMotion) {
+      this.showAll();
+      return;
+    }
 
     this.observer = new IntersectionObserver(
       (entries) => this.handleIntersection(entries),
-      this.observerOptions,
+      {
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.15,
+      },
     );
 
     this.init();
   }
 
   init() {
-    const animatedElements = document.querySelectorAll(
-      "section, .hotel-card, .restaurant-card, .lugar-card",
-    );
-    animatedElements.forEach((el) => {
-      el.classList.add("fade-in");
-      this.observer.observe(el);
+    this.elements.forEach((element) => {
+      this.observer.observe(element);
     });
   }
 
   handleIntersection(entries) {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("is-visible");
+
+      this.observer.unobserve(entry.target);
+    });
+  }
+
+  showAll() {
+    this.elements.forEach((element) => {
+      element.classList.add("is-visible");
     });
   }
 }
 
 /**
- * 7. INICIALIZACIÓN GENERAL
+ * ANIMACIÓN COLLAGE TIPO STICKER
+ * Activa la secuencia cuando el collage entra al viewport
+ */
+class StickerCollage {
+  constructor() {
+    this.collage = document.querySelector(
+      "[data-sticker-collage]",
+    );
+
+    if (!this.collage) return;
+
+    this.collage.classList.add("sticker-ready");
+
+    this.prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (this.prefersReducedMotion) {
+      this.collage.classList.add("is-visible");
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      this.collage.classList.add("is-visible");
+      return;
+    }
+
+    this.observer = new IntersectionObserver(
+      (entries) => this.handleIntersection(entries),
+      {
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.2,
+      },
+    );
+
+    this.observer.observe(this.collage);
+  }
+
+  handleIntersection(entries) {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("is-visible");
+
+      this.observer.unobserve(entry.target);
+    });
+  }
+}
+
+/**
+ * 6. INICIALIZACIÓN GENERAL
  */
 function init() {
   // Verificar que el DOM está listo
@@ -362,15 +439,16 @@ function initializeModules() {
     console.error("❌ Error en animaciones:", error);
   }
 
+  // Collage animado
+  try {
+    new StickerCollage();
+    console.log("✅ Collage tipo sticker activado");
+  } catch (error) {
+    console.error("❌ Error en collage tipo sticker:", error);
+  }
+
   console.log("🎊 ¡Invitación lista para celebrar!");
 }
 
 // Iniciar
 init();
-
-/**
- * Export para testing (opcional)
- */
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = { Countdown, BackToTop, Gallery, RSVPForm };
-}

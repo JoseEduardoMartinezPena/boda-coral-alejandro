@@ -1,0 +1,72 @@
+.event-details {
+  width: 100%;
+
+  margin: 0;
+  padding: var(--section-gap) 0 0;
+}
+
+.event-details__arch {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 402 / 557;
+}
+
+.event-details__frame {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  pointer-events: none;
+}
+
+.event-details__continuation {
+  position: relative;
+  z-index: 2;
+  margin-top: -9.5%;
+  padding-top: 9.5%;
+}
+
+.event-details__continuation::before,
+.event-details__continuation::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  background-color: var(--color-green);
+}
+
+/* Izquierdo: ya coincide correctamente */
+.event-details__continuation::before {
+  left: 0;
+  width: 3.73%;
+}
+
+/* Derecho: necesita ser ligeramente más ancho */
+.event-details__continuation::after {
+  right: 0;
+  width: calc(3.73% + 1.1px);
+}
+
+.event-details__continuation::before {
+  left: 0;
+}
+
+.event-details__continuation::after {
+  right: 0;
+}
+
+.event__image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.event-details__divider {
+  margin: var(--space-sm);
+}

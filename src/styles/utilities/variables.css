@@ -6,6 +6,7 @@
   /* COLORES PRINCIPALES */
   --color-green: #C5CA3A;
   --color-green-conteo: #C4CB20;
+  --color-green-font: #8B9011;
   --color-cream: #f4f0e7;
   --color-white: #fff;
   --color-dark: #161616;
@@ -20,20 +21,16 @@
   --color-dc-02: #FF5E00;  /* Naranja fuerte */
   --color-dc-03: #FDC600;  /* Amarillo dorado */
   --color-dc-04: #3E8500;  /* Verde medio */
-  
-  /* Fila 2: izq a der */
   --color-dc-05: #C30016;  /* Rojo vino */
   --color-dc-06: #BF9ECA;  /* Lavanda suave */
   --color-dc-07: #007ED2;  /* Azul cielo */
   --color-dc-08: #BB7549;  /* Marrón cálido */
   
-  /* Fila 3: izq a der */
+  /* Fila 2: izq a der */
   --color-dc-09: #029B97;  /* Teal turquesa */
   --color-dc-10: #F65E84;  /* Rosa coral */
   --color-dc-11: #EE0075;  /* Magenta vibrante */
   --color-dc-12: #8A0065;  /* Púrpura oscuro */
-  
-  /* Fila 4: izq a der */
   --color-dc-13: #F67E19;  /* Naranja cálido */
   --color-dc-14: #7EBAFB;  /* Azul cielo claro */
   --color-dc-15: #D25100;  /* Naranja profundo */

@@ -3,25 +3,31 @@
    ============================================ */
 
 .regalos {
-  margin: var(--space-lg) 0;
-  padding: var(--space-md);
-  background-color: var(--color-cream);
-  border-radius: var(--radius-md);
+  margin: var(--space-sm) 0;
+  padding: var(--space-sm) var(--space-md);
 }
 
 .regalos__header {
+  position: relative;
   text-align: center;
   margin-bottom: var(--space-md);
 }
 
 .regalos__header h2 {
   margin-bottom: var(--space-sm);
+  font-family: var(--font-script);
+  font-weight: var(--font-weight-normal);
+  color: #454444;
+  font-size: 33px;
 }
 
 .regalos__subtitle {
-  font-family: var(--font-serif);
-  font-size: var(--text-base);
-  color: var(--color-green);
+  position: absolute;
+  top: 2.3rem;
+  right: 4.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-black);
   font-style: italic;
   font-weight: var(--font-weight-normal);
   margin: 0;
@@ -33,9 +39,7 @@
 
 .regalos__image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
 }
 
@@ -43,122 +47,90 @@
   text-align: center;
   font-family: var(--font-serif);
   font-size: var(--text-base);
-  color: var(--color-gray-dark);
-  margin-bottom: var(--space-md);
+  color: var(--color-green-font);
+  margin-bottom: var(--space-sm);
   line-height: 1.7;
 }
 
 .regalos__message span {
   font-weight: var(--font-weight-bold);
-  color: var(--color-black);
+  color: var(--color-green-font);
 }
 
-.regalos__options {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
+.regalos__opciones {
+  position: relative;
 }
 
-.regalo-option {
-  background-color: var(--color-white);
-  padding: var(--space-md);
+.regalos__opciones-title {
+  background-color: var(--color-green);
+  color: #686868;
+  font-style: italic;
+  font-size: 10px;
+  display: inline-block;
+  position: absolute;
+  padding: 4px 7px;
   border-radius: var(--radius-lg);
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  border-top: 3px solid transparent;
-}
-
-.regalo-option--tienda {
-  border-top-color: var(--color-green);
-}
-
-.regalo-option--transferencia {
-  border-top-color: #FF9800;
-}
-
-.regalo-option h3 {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  color: var(--color-black);
-  margin-bottom: var(--space-sm);
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.regalo-option p {
-  font-size: var(--text-sm);
-  color: var(--color-gray-dark);
-  margin-bottom: var(--space-xs);
-  line-height: 1.5;
+.regalos__opciones-title.izq {
+  top: -0.5rem;
+  left: 2rem;
 }
 
-.regalo-option p:last-child {
-  margin-bottom: 0;
+.regalos__opciones-title.der {
+  top: -0.5rem;
+  right: 2rem;
 }
 
-/* EVENTO PALACIO DE HIERRO */
-.evento-code {
-  font-weight: var(--font-weight-bold);
-  color: var(--color-black);
-  margin-top: var(--space-sm);
+.regalos__opciones-cont {
+  display: flex;
+  column-gap: 4.5rem;
+  background-color: var(--color-gray-light);
+  padding: var(--space-md) var(--space-xs) var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
 }
 
-.evento-code strong {
-  font-family: "Monaco", monospace;
-  font-size: 1.1em;
-  color: var(--color-green);
-}
-
-/* DETALLES DE TRANSFERENCIA */
-.transferencia-details {
-  margin: var(--space-sm) 0 0;
-  text-align: left;
-  background-color: #f9f9f9;
-  padding: var(--space-sm);
-  border-radius: var(--radius-md);
-}
-
-.transferencia-details p {
-  font-size: var(--text-sm);
-  margin-bottom: var(--space-xs);
+.regalos__mesa {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
 }
 
-.transferencia-details p:last-child {
+.regalos__mesa-info,
+.regalos__trans-info {
+  margin-top: var(--space-xs);
+}
+
+.regalos__mesa-info,
+.regalos__trans-info {
+  border-left: #bdb3b3 2px solid;
+  text-align: center;
+}
+
+.regalos__mesa-info p,
+.regalos__trans-info p,
+.regalos__trans p {
+  font-size: clamp(8px, 2vw, 9px);
   margin-bottom: 0;
 }
 
-.transferencia-details strong {
-  flex-shrink: 0;
+.regalos__trans p,
+.regalos__trans-info {
   color: var(--color-black);
 }
 
-.transferencia-details code {
-  font-family: "Monaco", monospace;
-  color: var(--color-green);
-  background: transparent;
-  padding: 0;
-  font-weight: var(--font-weight-bold);
-  user-select: all;
+.regalos__mesa-info {
+  font-style: italic;
 }
 
-/* BOTÓN COPIAR */
-.btn-copy {
-  display: inline-block;
-  background-color: var(--color-green);
-  color: var(--color-white);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  font-weight: var(--font-weight-bold);
-  cursor: pointer;
-  margin-left: var(--space-xs);
-  transition: all var(--transition-base);
+.palacio {
+  padding-left: 1px;
 }
 
-.btn-copy.copied {
-  background-color: #4CAF50;
+.regalos__mesa-info span {
+  font-weight: 800;
+}
+
+.regalos__trans span {
+  font-weight: var(--font-weight-semibold);
 }

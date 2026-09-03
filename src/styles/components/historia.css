@@ -3,68 +3,132 @@
    ============================================ */
 
 .historia {
-  margin: var(--space-lg) 0;
-  padding: var(--space-md) 0;
+  margin: 0;
+  padding: 0;
 }
 
 .historia h2 {
   text-align: center;
-  margin-bottom: var(--space-md);
-}
-
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-sm);
-  grid-auto-rows: 120px;
-}
-
-.galeria img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  cursor: pointer;
-}
-
-.galeria img:active {
-  filter: brightness(1.05);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-script);
+  font-weight: var(--font-weight-normal);
+  color: #454444;
 }
 
 /* ============================================
    MOSAICO ASIMÉTRICO
-   Las fotos originales tienen proporciones muy
-   distintas (retrato, cuadradas, panorámicas).
-   Cada modificador reserva el número de celdas
-   que le corresponde dentro de la grilla de 4
-   columnas, en vez de forzarlas todas al mismo
-   tamaño.
    ============================================ */
+
+.historia__mosaic {
+  position: relative;
+
+  width: calc(100% - 56px);
+  aspect-ratio: 365 / 878;
+
+  margin-inline: auto;
+  overflow: hidden;
+
+  background-color: var(--color-white);
+}
  
-/* Foto protagonista: ocupa 2 columnas x 2 filas */
+.historia__mosaic-item {
+  position: absolute;
+
+  display: block;
+
+  object-fit: cover;
+  box-sizing: border-box;
+
+  width: auto;
+  height: auto;
+
+  border: 2px solid var(--color-white);
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+.historia__mosaic img {
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .historia__mosaic-item--feature {
-  grid-column: span 2;
-  grid-row: span 2;
+  top: 0;
+  left: 0;
+
+  width: 62.5%;
+  height: 17.5%;
+
+  object-position: center;
 }
- 
-/* Foto vertical: 1 columna x 2 filas */
-.historia__mosaic-item--tall {
-  grid-column: span 1;
-  grid-row: span 2;
+
+.historia__mosaic-item--top-right {
+  top: 0;
+  right: 0;
+
+  width: 37.5%;
+  height: 23%;
 }
- 
-/* Foto cuadrada pequeña: 1 columna x 1 fila */
-.historia__mosaic-item--square {
-  grid-column: span 1;
-  grid-row: span 1;
+
+.historia__mosaic-item--middle-left {
+  top: 17.5%;
+  left: 0;
+
+  width: 62.5%;
+  height: 35%;
 }
- 
-/* Foto panorámica: 2 columnas x 1 fila */
-.historia__mosaic-item--wide {
-  grid-column: span 2;
-  grid-row: span 1;
+
+.historia__mosaic-item--middle-right-up {
+  top: 23%;
+  right: 0;
+
+  width: 37.5%;
+  height: 23.8%;
 }
+
+.historia__mosaic-item--bottom-left {
+  top: 52.5%;
+  left: 0;
+
+  width: 62.5%;
+  height: 30.5%;
+}
+
+.historia__mosaic-item--proposal {
+  top: 46.8%;
+  right: 0;
+
+  width: 37.5%;
+  height: 20.8%;
+}
+
+.historia__mosaic-item--middle-right-down {
+  top: 67.6%;
+  right: 0;
+
+  width: 37.5%;
+  height: 15.4%;
+
+  object-position: center;
+}
+
+.historia__mosaic-item--wide-left {
+  top: 83%;
+  left: 0;
+
+  width: 54%;
+  height: 17%;
+}
+
+.historia__mosaic-item--wide-right {
+  top: 83%;
+  right: 0;
+
+  width: 46%;
+  height: 17%;
+}
+
 
 /* LIGHTBOX / MODAL */
 .lightbox {

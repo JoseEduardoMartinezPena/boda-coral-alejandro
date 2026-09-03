@@ -105,7 +105,6 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
 }
 
 /* LISTAS */
@@ -268,3 +267,148 @@ a:focus-visible {
     display: none;
   }
 }
+
+/* ANIMACIONES GENERALES */
+[data-animate] {
+  opacity: 0;
+
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(24px);
+}
+
+[data-animate="fade-down"] {
+  transform: translateY(-24px);
+}
+
+[data-animate="fade-left"] {
+  transform: translateX(-24px);
+}
+
+[data-animate="fade-right"] {
+  transform: translateX(24px);
+}
+
+[data-animate="scale-in"] {
+  transform: scale(0.85);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ANIMACIÓN STICKER */
+/* @keyframes sticker-paste {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(-24px)
+      scale(1.08)
+      rotate(var(--rotation));
+
+    box-shadow:
+      0 18px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  65% {
+    opacity: 1;
+
+    transform:
+      translateY(2px)
+      scale(0.98)
+      rotate(var(--rotation));
+
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  82% {
+    transform:
+      translateY(-1px)
+      scale(1.01)
+      rotate(var(--rotation));
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(var(--rotation));
+
+    box-shadow:
+      0 2px 5px rgba(0, 0, 0, 0.12);
+  }
+} */
+
+@keyframes sticker-paste-3d {
+  0% {
+    opacity: 0;
+
+    transform:
+      translate3d(
+        var(--entry-x),
+        var(--entry-y),
+        90px
+      )
+      rotateX(var(--entry-rotate-x))
+      rotateY(var(--entry-rotate-y))
+      rotateZ(var(--rotation));
+
+    box-shadow:
+      18px 24px 30px rgba(0, 0, 0, 0.22);
+  }
+
+  65% {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 4px)
+      rotateX(2deg)
+      rotateY(-1deg)
+      rotateZ(var(--rotation));
+
+    box-shadow:
+      2px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  82% {
+    transform:
+      translate3d(0, 0, 1px)
+      rotateX(-1deg)
+      rotateY(0.5deg)
+      rotateZ(var(--rotation));
+
+    box-shadow:
+      1px 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0)
+      rotateX(0deg)
+      rotateY(0deg)
+      rotateZ(var(--rotation));
+
+    box-shadow:
+      0 2px 5px rgba(0, 0, 0, 0.12);
+  }
+}
+

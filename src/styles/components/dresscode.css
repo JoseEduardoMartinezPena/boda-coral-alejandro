@@ -3,168 +3,175 @@
    ============================================ */
 
 .dresscode {
-  margin: var(--space-lg) 0;
-  padding: var(--space-md) 0;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  box-sizing: border-box;
+
+  margin: var(--section-gap) 0 0;
+  padding:
+    7% 11% 9%;
+}
+
+.dresscode__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 4%;
 }
 
 .dresscode__title {
-  text-align: center;
-  margin-bottom: var(--space-sm);
-}
+  margin: 10px 0;
 
-.dresscode__subtitle {
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  color: var(--color-green);
+  font-family: var(--font-script);
+  font-size: clamp(30px, 8.5vw, 38px);
   font-weight: var(--font-weight-normal);
+  line-height: 0.95;
+
+  color: #4F4F4E;
+}
+
+.dresscode__formal {
+  margin: 10px 0 0;
+
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 3.8vw, 20px);
+  font-weight: var(--font-weight-bold);
   letter-spacing: 2px;
-  margin-bottom: var(--space-md);
+  line-height: 1;
+
+  color: #535353;
 }
 
-.dresscode__guide {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
-}
+.dresscode__inspiration {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-.dresscode__item {
-  text-align: center;
-  padding: var(--space-md);
-  background-color: var(--color-gray-light);
-  border-radius: var(--radius-lg);
-}
+  min-height: 24px;
+  padding: 4px 12px;
+  margin-bottom: 7%;
 
-.dresscode__item h4 {
+  border-radius: 5px;
+
+  background-color: var(--color-green);
+  color: #504f4f;
+
   font-family: var(--font-sans);
-  font-size: var(--text-lg);
-  color: var(--color-black);
-  margin-bottom: var(--space-sm);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: clamp(10px, 2.2vw, 12px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  font-style: italic;
 }
 
-.dresscode__item p {
-  font-size: var(--text-sm);
-  color: var(--color-gray-dark);
+.dresscode__guidelines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  margin-bottom: 6%;
+}
+
+.dresscode__line {
   margin: 0;
-  line-height: 1.6;
-}
 
-/* PALETA DE COLORES */
-.dresscode__colors {
-  margin-bottom: var(--space-md);
-}
-
-.dresscode__colors h4 {
   font-family: var(--font-sans);
-  font-size: var(--text-lg);
-  color: var(--color-black);
-  margin-bottom: var(--space-md);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: clamp(10px, 2.7vw, 12px);
+  line-height: 1.25;
+
+  color: var(--color-green-font);
+  font-weight: var(--font-weight-medium);
 }
 
-.color-palette {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
+.dresscode__line strong {
+  color: var(--color-green-font);
+  font-weight: 800;
 }
 
-.color-item {
-  aspect-ratio: 1 / 1;
-  border-radius: var(--radius-md);
-  border: 3px solid var(--color-white);
-  cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-  box-shadow: var(--shadow-md);
+.dresscode__colors-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 7%;
 }
 
-.color-item:active {
-  transform: scale(0.95);
+.dresscode__colors-label {
+  margin: 0 0 8px;
+
+  font-family: var(--font-sans);
+  font-size: clamp(10px, 2.8vw, 12px);
+  line-height: 1.2;
+
+  color: var(--color-green-font);
+  font-weight: var(--font-weight-medium);
 }
 
-/* Colores de la paleta dress code */
-.color-item:nth-child(1) { background: var(--color-dc-01); }
-.color-item:nth-child(2) { background: var(--color-dc-02); }
-.color-item:nth-child(3) { background: var(--color-dc-03); }
-.color-item:nth-child(4) { background: var(--color-dc-04); }
-.color-item:nth-child(5) { background: var(--color-dc-05); }
-.color-item:nth-child(6) { background: var(--color-dc-06); }
-.color-item:nth-child(7) { background: var(--color-dc-07); }
-.color-item:nth-child(8) { background: var(--color-dc-08); }
-.color-item:nth-child(9) { background: var(--color-dc-09); }
-.color-item:nth-child(10) { background: var(--color-dc-10); }
-.color-item:nth-child(11) { background: var(--color-dc-11); }
-.color-item:nth-child(12) { background: var(--color-dc-12); }
-.color-item:nth-child(13) { background: var(--color-dc-13); }
-.color-item:nth-child(14) { background: var(--color-dc-14); }
-.color-item:nth-child(15) { background: var(--color-dc-15); }
-.color-item:nth-child(16) { background: var(--color-dc-16); }
-
-/* RESTRICCIONES DE COLORES */
-.dresscode__restrictions {
-  padding: var(--space-md);
-  background-color: #FFF3E0;
-  border-radius: var(--radius-lg);
-  border-left: 4px solid #FF9800;
-}
-
-.dresscode__restrictions p {
-  font-size: var(--text-sm);
-  color: var(--color-gray-dark);
-  margin-bottom: var(--space-sm);
-  line-height: 1.7;
-}
-
-.dresscode__restrictions p strong {
-  color: var(--color-black);
-}
-
-.dresscode__restrictions ul {
+.dresscode__palette {
   list-style: none;
   padding: 0;
   margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  gap: 3px 4px;
+
+  justify-content: center;
 }
 
-.dresscode__restrictions li {
-  padding: var(--space-xs) 0;
-  padding-left: var(--space-md);
-  position: relative;
-  font-size: var(--text-xs);
-  color: var(--color-gray-dark);
-  margin-bottom: 0;
+.dresscode__swatch {
+  width: clamp(22px, 3.6vw, 25px);
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+  background-color: var(--swatch-color);
+
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
-.dresscode__restrictions li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--color-green);
-  font-weight: var(--font-weight-bold);
+.dresscode__note {
+  width: 92%;
+  margin: 0 0 7%;
+
+  font-family: var(--font-sans);
+  font-size: clamp(7px, 1.9vw, 9px);
+  line-height: 1.35;
+
+  color: var(--color-green-font);
+  font-weight: var(--font-weight-medium);
 }
 
-/* LINK VER INSPIRACIÓN */
-.dresscode__inspiration-link {
-  display: inline-block;
-  color: var(--color-green);
-  text-decoration: underline;
-  font-weight: var(--font-weight-semibold);
-  margin-top: var(--space-sm);
-  cursor: pointer;
+.dresscode__note strong {
+  color: var(--color-green-font);
+  font-weight: 800;
 }
 
-/* IMAGEN DE INSPIRACIÓN */
-.dresscode__inspiration {
-  margin-top: var(--space-md);
-}
- 
-.dresscode__inspiration img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+.dresscode__badge {
+  margin: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 22px;
+  padding: 4px 12px;
+
+  border-radius: 5px;
+
+  background-color: var(--color-green);
+  color: var(--color-white);
+
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 2.1vw, 10px);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  letter-spacing: 0.4px;
 }

@@ -10,6 +10,7 @@
     />
     <meta name="theme-color" content="#C4CB20" />
     <title>Coral & Alejandro | 06.03.2027</title>
+    <link rel="stylesheet" href="./src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
@@ -17,7 +18,7 @@
   <body>
     <div class="page">
       <!-- HERO SECTION -->
-      <header class="hero">
+      <header class="hero" data-animate="fade-up">
         <div class="hero__image">
           <img
             src="/src/assets/images/hero_bg.webp"
@@ -47,19 +48,19 @@
       <!-- CONTADOR REGRESIVO -->
       <section id="contador" class="contador">
         <div class="contador__item">
-          <span class="contador__number" data-value="208">208</span>
+          <span class="contador__number" data-countdown="days">208</span>
           <span class="contador__label">días</span>
         </div>
         <div class="contador__item">
-          <span class="contador__number" data-value="18">18</span>
+          <span class="contador__number" data-countdown="hours">18</span>
           <span class="contador__label">horas</span>
         </div>
         <div class="contador__item">
-          <span class="contador__number" data-value="1">1</span>
+          <span class="contador__number" data-countdown="minutes">1</span>
           <span class="contador__label">minuto</span>
         </div>
         <div class="contador__item">
-          <span class="contador__number" data-value="35">35</span>
+          <span class="contador__number" data-countdown="seconds">35</span>
           <span class="contador__label">segundos</span>
         </div>
       </section>
@@ -70,9 +71,11 @@
           <div class="nuestroamor__text">
             <p>
               Nuestro amor comenzó con nosotros, pero
-              <span>llegó
+              <span
+                >llegó
                 <br />
-                hasta aquí gracias a muchos.</span>
+                hasta aquí gracias a muchos.</span
+              >
             </p>
 
             <p>
@@ -106,151 +109,259 @@
 
           <div class="nuestroamor__closing">
             <p>
-                queremos celebrar nuestra historia y
-                <br />todo lo que está por venir.
+              queremos celebrar nuestra historia y
+              <br />todo lo que está por venir.
             </p>
           </div>
         </section>
 
         <!-- GALERÍA COLLAGE -->
-        <div class="nuestroamor__collage">
-          <img
-            class="nuestroamor__collage-item nuestroamor__collage-item--1"
-            src="/src/assets/images/collage-1.webp"
-            alt="Coral y Antonio en su boda de Las Vegas"
-            loading="lazy"
-            data-collage-index="1"
-          />
-          <img
-            class="nuestroamor__collage-item nuestroamor__collage-item--2"
-            src="/src/assets/images/collage-2.webp"
-            alt="Propuesta de matrimonio en el crucero"
-            loading="lazy"
-            data-collage-index="2"
-          />
-          <img
-            class="nuestroamor__collage-item nuestroamor__collage-item--3"
-            src="/src/assets/images/collage-3.webp"
-            alt="Coral y Antonio besándose"
-            loading="lazy"
-            data-collage-index="3"
-          />
-          <img
-            class="nuestroamor__collage-item nuestroamor__collage-item--4"
-            src="/src/assets/images/collage-4.webp"
-            alt="Coral y Antonio junto a la limosina"
-            loading="lazy"
-            data-collage-index="4"
-          />
-          <img
-            class="nuestroamor__collage-item nuestroamor__collage-item--5"
-            src="/src/assets/images/collage-5.webp"
-            alt="Selfie de Coral y Antonio en la playa"
-            loading="lazy"
-            data-collage-index="5"
-          />
+        <div class="nuestroamor__collage" data-sticker-collage>
+          <div class="nuestroamor__collage-item nuestroamor__collage-item--1">
+            <img
+              src="/src/assets/images/collage-1.webp"
+              alt="Coral y Antonio en su boda de Las Vegas"
+              loading="lazy"
+              data-collage-index="1"
+            />
+          </div>
+          <div class="nuestroamor__collage-item nuestroamor__collage-item--2">
+            <img
+              src="/src/assets/images/collage-2.webp"
+              alt="Propuesta de matrimonio en el crucero"
+              loading="lazy"
+              data-collage-index="2"
+            />
+          </div>
+          <div class="nuestroamor__collage-item nuestroamor__collage-item--3">
+            <img
+              src="/src/assets/images/collage-3.webp"
+              alt="Coral y Antonio besándose"
+              loading="lazy"
+              data-collage-index="3"
+            />
+          </div>
+          <div class="nuestroamor__collage-item nuestroamor__collage-item--4">
+            <img
+              src="/src/assets/images/collage-4.webp"
+              alt="Coral y Antonio junto a la limosina"
+              loading="lazy"
+              data-collage-index="4"
+            />
+          </div>
+          <div class="nuestroamor__collage-item nuestroamor__collage-item--5">
+            <img
+              src="/src/assets/images/collage-5.webp"
+              alt="Selfie de Coral y Antonio en la playa"
+              loading="lazy"
+              data-collage-index="5"
+            />
+          </div>
         </div>
 
-        <!-- ITINERARIO Y CEREMONIA -->
-        <section id="itinerario" class="itinerario">
-          <h2 class="itinerario__title">Itinerario</h2>
-
-          <div class="itinerario__badge">no niños</div>
-
-          <div class="itinerario__event">
-            <h3 class="itinerario__event-title">Anfiteatro Ceremonia</h3>
-            <p class="itinerario__event-time">17:00hrs</p>
-          </div>
-
-          <div class="itinerario__icon">
+        <!-- DETALLES EVENTO -->
+        <section class="event-details" data-animate>
+          <div class="event-details__arch">
             <img
-              src="/src/assets/images/hacienda_ochil.webp"
-              alt="Ilustración del jardín de la Hacienda San Pedro Ochil"
-              loading="lazy"
+              src="./src/assets/images/arco.svg"
+              class="event-details__frame"
+              alt=""
+              aria-hidden="true"
             />
+
+            <!-- ITINERARIO -->
+            <section class="itinerary">
+              <header class="itinerary__header">
+                <h2 class="itinerary__title">Itinerario</h2>
+                <span class="itinerary__notice">no niños</span>
+              </header>
+
+              <div class="itinerary__ceremony">
+                <div class="itinerary__ceremony-heading">
+                  <span class="itinerary__eyebrow">Ceremonia</span>
+                  <h3 class="itinerary__event-title">Anfiteatro</h3>
+                </div>
+
+                <img
+                  src="./src/assets/images/hacienda_ochil.webp"
+                  class="itinerary__illustration itinerary__illustration--ceremony"
+                  alt=""
+                  aria-hidden="true"
+                />
+
+                <div class="itinerary__venue">
+                  <span class="itinerary__eyebrow">Hacienda</span>
+
+                  <strong class="itinerary__venue-name">
+                    San Pedro Ochil
+                  </strong>
+
+                  <address class="itinerary__address">
+                    Carretera Mérida-Uxmal km 176.5, 97825 Abalá
+                  </address>
+
+                  <time class="itinerary__time"> 17:00hrs </time>
+
+                  <a
+                    href="#"
+                    class="itinerary__location"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ubicación
+                  </a>
+                </div>
+              </div>
+
+              <div class="itinerary__party">
+                <img
+                  src="./src/assets/images/hacienda_ochil_2.webp"
+                  class="itinerary__illustration itinerary__illustration--party"
+                  alt=""
+                  aria-hidden="true"
+                />
+
+                <h3 class="itinerary__party-title">Fiesta</h3>
+
+                <p class="itinerary__party-text">
+                  A continuación de la ceremonia, los invitamos <br />
+                  cordialmente a
+                  <span>acompañarnos en el cóctel y la <br />recepción,</span>
+                  los cuales tendrán lugar en el mismo recinto.
+                </p>
+              </div>
+            </section>
           </div>
 
-          <div class="itinerario__location">
-            <h4>Ubicación</h4>
-            <div class="location__details">
-              <p><strong>Hacienda San Pedro Ochil</strong></p>
-              <p>Carretera Mérida-Uxmal km 176.5</p>
-              <p>97825 Abalá, Yucatán</p>
-            </div>
+          <!-- DRESSCODE -->
+          <div class="event-details__continuation">
+            <section class="dresscode">
+              <img
+                class="event-details__divider"
+                src="./src/assets/images/onda.svg"
+                alt=""
+                aria-hidden="true"
+              />
+
+              <header class="dresscode__header">
+                <h2 class="dresscode__title">Dresscode</h2>
+                <p class="dresscode__formal">FORMAL</p>
+              </header>
+
+              <a
+                href="#"
+                class="dresscode__inspiration"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                VER INSPIRACIÓN
+              </a>
+
+              <div class="dresscode__guidelines">
+                <p class="dresscode__line">
+                  <strong>Mujeres:</strong> largo formal
+                </p>
+
+                <p class="dresscode__line">
+                  <strong>Hombres:</strong> Guayabera (no manta) o traje de lino
+                </p>
+              </div>
+
+              <div class="dresscode__colors-block">
+                <p class="dresscode__colors-label">Sugerencia de colores</p>
+
+                <ul
+                  class="dresscode__palette"
+                  aria-label="Paleta de colores sugeridos"
+                >
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-01)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-02)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-03)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-04)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-05)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-06)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-07)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-08)"
+                  ></li>
+
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-09)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-10)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-11)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-12)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-13)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-14)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-15)"
+                  ></li>
+                  <li
+                    class="dresscode__swatch"
+                    style="--swatch-color: var(--color-dc-16)"
+                  ></li>
+                </ul>
+              </div>
+
+              <p class="dresscode__note">
+                Para mantener la armonía de nuestra celebración, agradecemos a
+                <br />
+                nuestros invitados evitar los siguientes tonos:
+                <strong
+                  >blanco, marfil y rosa <br />claro, reservados para la novia;
+                  verde manzana y morado, para <br />
+                  las damas de honor; verde y beige, para los caballeros de
+                  honor.</strong
+                >
+              </p>
+
+              <p class="dresscode__badge">NO NIÑOS</p>
+            </section>
           </div>
 
-          <div class="itinerario__icon">
-            <img
-              src="/src/assets/images/hacienda_ochil_2.webp"
-              alt="Ilustración de la fachada de la Hacienda San Pedro Ochil"
-              loading="lazy"
-            />
-          </div>
-
-          <div class="itinerario__reception">
-            <h4>Fiesta</h4>
-            <p>
-              A continuación de la ceremonia, los invitamos cordialmente a
-              acompañarnos en el cóctel y la recepción, los cuales tendrán lugar
-              en el mismo recinto.
-            </p>
-          </div>
-        </section>
-
-        <!-- DRESS CODE -->
-        <section id="dresscode" class="dresscode">
-          <h2 class="dresscode__title">Dresscode</h2>
-          <p class="dresscode__subtitle">Formal</p>
-
-          <div class="dresscode__guide">
-            <div class="dresscode__item">
-              <h4>Mujeres</h4>
-              <p>Largo formal</p>
-            </div>
-            <div class="dresscode__item">
-              <h4>Hombres</h4>
-              <p>Guayabera (no manta) o traje de lino</p>
-            </div>
-          </div>
-
-          <div class="dresscode__colors">
-            <h4>Sugerencia de colores</h4>
-            <div class="color-palette">
-              <div class="color-item" title="Verde oscuro"></div>
-              <div class="color-item" title="Naranja fuerte"></div>
-              <div class="color-item" title="Amarillo dorado"></div>
-              <div class="color-item" title="Verde medio"></div>
-              <div class="color-item" title="Rojo vino"></div>
-              <div class="color-item" title="Lavanda"></div>
-              <div class="color-item" title="Azul cielo"></div>
-              <div class="color-item" title="Marrón cálido"></div>
-              <div class="color-item" title="Teal turquesa"></div>
-              <div class="color-item" title="Rosa coral"></div>
-              <div class="color-item" title="Magenta"></div>
-              <div class="color-item" title="Púrpura oscuro"></div>
-              <div class="color-item" title="Naranja cálido"></div>
-              <div class="color-item" title="Azul claro"></div>
-              <div class="color-item" title="Naranja profundo"></div>
-              <div class="color-item" title="Marrón oscuro"></div>
-            </div>
-          </div>
-
-          <div class="dresscode__restrictions">
-            <p>
-              <strong>Para mantener la armonía</strong> de nuestra celebración,
-              agradecemos a nuestros invitados evitar los siguientes tonos:
-            </p>
-            <ul>
-              <li>Blanco, marfil y rosa claro (reservados para la novia)</li>
-              <li>Verde manzana y morado (para damas de honor)</li>
-              <li>Verde y beige (para caballeros de honor)</li>
-            </ul>
-          </div>
-
-          <div class="dresscode__inspiration">
+          <div class="event__image">
             <img
               src="/src/assets/images/Pedida_Coral_dresscode.webp"
-              alt="Inspiración de outfit"
+              alt="Coral y Antonio tomados de la mano"
               loading="lazy"
             />
           </div>
@@ -267,164 +378,187 @@
             Tu presencia es <span>nuestro mejor regalo.</span>
           </p>
 
-          <div class="regalos__options">
-            <div class="regalo-option regalo-option--tienda">
-              <h3>Mesa de Regalos</h3>
-              <p>Palacio de Hierro</p>
-              <p class="evento-code">No. evento: <strong>5002200</strong></p>
-            </div>
+          <div class="regalos__opciones">
+            <p class="regalos__opciones-title izq">Mesa de Regalos</p>
+            <p class="regalos__opciones-title der">Transferencias</p>
 
-            <div class="regalo-option regalo-option--transferencia">
-              <h3>Transferencias</h3>
-              <div class="transferencia-details">
-                <p><strong>Banco:</strong> <code>BBVA</code></p>
-                <p><strong>Titular:</strong> <code>Coral Casco</code></p>
+            <div class="regalos__opciones-cont">
+              <div class="regalos__mesa">
+                <img
+                  src="/src/assets/images/El_Palacio_de_Hierro_logo.svg"
+                  alt=""
+                />
+                <div class="regalos__mesa-info">
+                  <p class="palacio">
+                    Palacio de Hierro
+                    <br />
+                    <span
+                      >No. evento
+                      <br />
+                      5002200
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="regalos__trans">
                 <p>
-                  <strong>Clabe:</strong> <code>0126 5000 4794 606329</code>
+                  También puedes hacernos llegar tu
+                  <br />
+                  regalo <span>vía transferencia bancaria.</span>
                 </p>
-                <p><strong>Cuenta:</strong> <code>047 946 0632</code></p>
+                <div class="regalos__trans-info">
+                  <p>
+                    Banco: BBVA
+                    <br />
+                    Titular: Coral Casco
+                    <br />
+                    Clabe: 0126 5000 4794 606329
+                    <br />
+                    Cuenta: 047 946 0632
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="regalos__image">
-            <img
-              src="/src/assets/images/coral_antonio_regalos.webp"
-              alt="Coral y Antonio tomados de la mano"
-              loading="lazy"
-            />
-          </div>
         </section>
 
+        <div class="regalos__image">
+          <img
+            src="/src/assets/images/coral_antonio_regalos.webp"
+            alt="Coral y Antonio tomados de la mano"
+            loading="lazy"
+          />
+        </div>
+
         <!-- RSVP FORM -->
-        <section id="rsvp" class="rsvp">
+        <section id="rsvp" class="rsvp" data-animate="scale-in">
           <h2>Confirma tu asistencia</h2>
           <p class="rsvp__deadline">
-            Por favor confirma tu asistencia antes del 28 de enero 2027
+            Por favor
+            <span
+              >confirma tu asistencia antes del
+              <br />
+              28 de enero 2027</span
+            >
           </p>
 
-          <!-- Netlify Forms -->
+          <!-- Formulario -->
           <form
             name="rsvp"
             class="rsvp__form"
             method="POST"
-            netlify
+            data-netlify="true"
             netlify-honeypot="bot-field"
           >
-            <!-- Honeypot para evitar spam -->
-            <input type="hidden" name="bot-field" />
-
-            <!-- Campo oculto para el nombre del formulario -->
+            <!-- Necesario si enviamos mediante fetch/AJAX -->
             <input type="hidden" name="form-name" value="rsvp" />
 
+            <!-- Honeypot -->
+            <p class="form__honeypot" aria-hidden="true">
+              <label>
+                No llenar este campo:
+                <input
+                  type="text"
+                  name="bot-field"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </label>
+            </p>
+
+            <!-- MENSAJE -->
             <div
               id="form-message"
               class="form-message"
-              style="display: none"
+              hidden
+              aria-live="polite"
             ></div>
 
-            <div class="form__group">
-              <label for="nombre"
-                >Nombre Completo <span class="required">*</span></label
-              >
+            <!-- Nombre -->
+            <div class="form__group form__group--nombre">
+              <label for="nombre">Nombre Completo</label>
               <input
                 type="text"
                 id="nombre"
                 name="nombre"
-                placeholder="Ej: Juan Pérez"
+                autocomplete="name"
                 required
               />
             </div>
 
-            <div class="form__group">
-              <label for="pases"
-                >Número de pases <span class="required">*</span></label
-              >
+            <!-- Pases -->
+            <div class="form__group form__group--pases">
+              <label for="pases">Número de pases</label>
               <input
                 type="number"
                 id="pases"
                 name="pases"
                 min="1"
                 max="5"
-                placeholder="¿Cuántas personas?"
+                inputmode="numeric"
                 required
               />
             </div>
 
+            <!-- Teléfono -->
             <div class="form__group">
               <label for="telefono">Teléfono</label>
               <input
                 type="tel"
                 id="telefono"
                 name="telefono"
-                placeholder="+52 999 123 4567"
+                autocomplete="tel"
               />
             </div>
 
+            <!-- Hospedaje -->
             <div class="form__group">
-              <label for="hospedaje">¿Dónde te hospedarás?</label>
-              <input
-                type="text"
-                id="hospedaje"
-                name="hospedaje"
-                placeholder="Hotel, Airbnb, casa de familia, etc."
-              />
+              <label for="hospedaje">Dónde te hospedarás</label>
+              <input type="text" id="hospedaje" name="hospedaje" />
             </div>
 
+            <!-- Restricciones -->
             <div class="form__group">
-              <label for="restricciones"
-                >¿Alguna restricción alimentaria?</label
-              >
-              <textarea
-                id="restricciones"
-                name="restricciones"
-                placeholder="Vegetariano, alérgico a frutos secos, sin gluten, etc."
-                rows="3"
-              ></textarea>
+              <label for="restricciones">
+                ¿Alguna restricción alimentaria?
+              </label>
+              <input type="text" id="restricciones" name="restricciones" />
             </div>
 
+            <!-- Asistencia -->
             <fieldset class="form__group form__group--radio">
-              <legend>¿Asistirás? <span class="required">*</span></legend>
+              <legend>¿Asistirás?</legend>
+
               <div class="radio-group">
                 <label>
                   <input type="radio" name="asistencia" value="si" required />
-                  Sí, estaré ahí
+                  Sí
                 </label>
+
                 <label>
                   <input type="radio" name="asistencia" value="no" />
-                  Lamentablemente no podré
+                  No
                 </label>
               </div>
             </fieldset>
 
-            <button type="submit" class="btn btn--primary">
-              Enviar Confirmación
-            </button>
-            <p class="form-info">
-              Tu respuesta será enviada de forma segura a través de Netlify
-              Forms
-            </p>
+            <button type="submit" class="btn btn--primary">Enviar</button>
           </form>
         </section>
 
         <!-- RECOMENDACIONES -->
         <section id="recomendaciones" class="recomendaciones">
-
           <div class="recomendaciones__title">
             <img
               src="/src/assets/images/recomendaciones.webp"
               alt="Coral y Antonio en Chichén Itzá"
               loading="lazy"
             />
-            <h2>Recomendaciones 
-              <br>
+            <h2>
+              Recomendaciones
+              <br />
               <span>en Mérida</span>
             </h2>
-          </div>
-          
-
-          <div class="recomendaciones__image">
-            
           </div>
 
           <!-- HOSPEDAJE -->
@@ -436,40 +570,39 @@
             <div class="hoteles-list">
               <article class="hotel-card">
                 <h4>Hotel Hyatt</h4>
-                <p class="address">Ave. Colón esq Calle 60, Zona Paseo
-                  <br /> Montejo, 97000 Mérida, Yuc.</p>
-                <p class="codigo">
-                  Código: <strong>Solicitar en recepción</strong>
+                <p class="address">
+                  Ave. Colón esq Calle 60, Zona Paseo <br />
+                  Montejo, 97000 Mérida, Yuc.
                 </p>
+                <p class="codigo">Código: <strong>#</strong></p>
               </article>
 
               <article class="hotel-card">
                 <h4>Hotel Kavia Premium</h4>
-                <p class="address">Calle 56 A 497, entre calles 45 y 47 Zona Paseo Montejo,
-                  <br /> Centro, 97000 Mérida, Yuc.
+                <p class="address">
+                  Calle 56 A 497, entre calles 45 y 47 Zona Paseo Montejo,
+                  <br />
+                  Centro, 97000 Mérida, Yuc.
                 </p>
-                <p class="codigo">
-                  Código: <strong>Solicitar en recepción</strong>
-                </p>
+                <p class="codigo">Código: <strong>#</strong></p>
               </article>
 
               <article class="hotel-card">
                 <h4>Hotel Plaza <span>by Kavia</span></h4>
-                <p class="address">Av. Paseo de Montejo, Nº481 Entre 39 y 41, Col. Centro,
-                  <br /> 97000, Mérida, Yucatán.</p>
-                <p class="codigo">
-                  Código: <strong>Solicitar en recepción</strong>
+                <p class="address">
+                  Av. Paseo de Montejo, Nº481 Entre 39 y 41, Col. Centro, <br />
+                  97000, Mérida, Yucatán.
                 </p>
+                <p class="codigo">Código: <strong>#</strong></p>
               </article>
 
               <article class="hotel-card">
                 <h4>Hotel Chariot <span>by Kavia</span></h4>
-                <p class="address">Calle 56a entre 43 y 45, Zona Paseo Montejo, Centro,
-                  <br /> 97000 Mérida, Yuc.
+                <p class="address">
+                  Calle 56a entre 43 y 45, Zona Paseo Montejo, Centro, <br />
+                  97000 Mérida, Yuc.
                 </p>
-                <p class="codigo">
-                  Código: <strong>Solicitar en recepción</strong>
-                </p>
+                <p class="codigo">Código: <strong>#</strong></p>
               </article>
             </div>
           </div>
@@ -478,12 +611,12 @@
           <div class="recomendaciones__category">
             <div class="belleza-title">
               <h3>Belleza</h3>
-              <img src="/src/assets/images/belleza.svg" alt="">
+              <img src="/src/assets/images/belleza.svg" alt="" />
             </div>
             <div class="belleza-cont">
               Pronto se irá actualizando la página para que puedas
               <br />
-               agendar para el gran día.
+              agendar para el gran día.
             </div>
           </div>
 
@@ -491,7 +624,6 @@
           <div class="recomendaciones__category">
             <h3>Alimentos</h3>
             <div class="restaurants-grid">
-
               <h5 class="restaurants-title">Desayunos</h5>
               <h5 class="restaurants-title">Comidas</h5>
               <h5 class="restaurants-title">Cenas</h5>
@@ -621,53 +753,68 @@
         </section>
 
         <!-- NUESTRA HISTORIA -->
-        <section id="historia" class="historia">
-          <h2>Nuestra Historia</h2>
+        <section id="historia" class="historia" data-animate>
+          <h2>Nuestra historia</h2>
           <div class="galeria historia__mosaic">
             <img
+              data-lightbox
               class="historia__mosaic-item historia__mosaic-item--feature"
               src="/src/assets/images/nuestrahistoria1.webp"
               alt="Momento 1"
               loading="lazy"
             />
             <img
-              class="historia__mosaic-item historia__mosaic-item--tall"
-              src="/src/assets/images/nuestrahistoria5.webp"
-              alt="Momento 5"
-              loading="lazy"
-            />
-            <img
-              class="historia__mosaic-item historia__mosaic-item--square"
+              data-lightbox
+              class="historia__mosaic-item historia__mosaic-item--top-right"
               src="/src/assets/images/nuestrahistoria2.webp"
               alt="Momento 2"
               loading="lazy"
             />
             <img
-              class="historia__mosaic-item historia__mosaic-item--square"
+              data-lightbox
+              class="historia__mosaic-item historia__mosaic-item--middle-left"
               src="/src/assets/images/nuestrahistoria3.webp"
               alt="Momento 3"
               loading="lazy"
             />
             <img
-              class="historia__mosaic-item historia__mosaic-item--tall"
-              src="/src/assets/images/nuestrahistoria6.webp"
-              alt="Momento 6"
-              loading="lazy"
-            />
-            <img
-              class="historia__mosaic-item historia__mosaic-item--square"
+              data-lightbox
+              class="historia__mosaic-item historia__mosaic-item--middle-right-up"
               src="/src/assets/images/nuestrahistoria4.webp"
               alt="Momento 4"
               loading="lazy"
             />
             <img
-              class="historia__mosaic-item historia__mosaic-item--wide"
+              data-lightbox
+              class="historia__mosaic-item historia__mosaic-item--bottom-left"
+              src="/src/assets/images/nuestrahistoria6.webp"
+              alt="Momento 6"
+              loading="lazy"
+            />
+            <img
+              data-lightbox
+              class="historia__mosaic-item historia__mosaic-item--proposal"
+              src="/src/assets/images/nuestrahistoria5.webp"
+              alt="Momento 5"
+              loading="lazy"
+            />
+            <img
+              data-lightbox
+              class="historia__mosaic-item historia__mosaic-item--middle-right-down"
+              src="/src/assets/images/nuestrahistoria9.webp"
+              alt="Momento 9"
+              loading="lazy"
+            />
+            <img
+              data-lightbox
+              class="historia__mosaic-item historia__mosaic-item--wide-left"
               src="/src/assets/images/nuestrahistoria7.webp"
               alt="Momento 7"
               loading="lazy"
             />
             <img
-              class="historia__mosaic-item historia__mosaic-item--wide"
+              data-lightbox
+              class="historia__mosaic-item historia__mosaic-item--wide-right"
               src="/src/assets/images/nuestrahistoria8.webp"
               alt="Momento 8"
               loading="lazy"
@@ -684,6 +831,6 @@
     <!-- /.page -->
 
     <!-- Scripts -->
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

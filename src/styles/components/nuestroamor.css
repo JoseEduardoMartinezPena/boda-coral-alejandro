@@ -3,7 +3,7 @@
    ============================================ */
 
 .nuestroamor {
-  margin: var(--space-md) 0;
+  margin: var(--space-md) 0 0;
   padding: 0;
 }
 
@@ -60,68 +60,222 @@
    ============================================ */
 .nuestroamor__collage {
   position: relative;
+
   width: 100%;
-  height: 380px;
-  margin: var(--space-lg) 0 var(--space-xl);
+  min-height: 350px;
+
+  margin: -7% 0;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  perspective: 900px;
+  perspective-origin: center center;
 }
  
 .nuestroamor__collage-item {
   position: absolute;
-  object-fit: cover;
-  border: 6px solid var(--color-white);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-lg);
+
+  overflow: hidden;
+
+  border: 4px solid var(--color-white);
+  border-radius: 5px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+
   background-color: var(--color-gray-light);
+
+  transform-style: preserve-3d;
+  transform-origin: center;
+  backface-visibility: hidden;
+
+  will-change:
+    transform,
+    opacity,
+    box-shadow;
 }
- 
+
+.nuestroamor__collage-item img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
 /* Foto grande, ancla superior izquierda */
 .nuestroamor__collage-item--1 {
-  top: 0;
-  left: 0;
-  width: 58%;
-  height: 62%;
-  transform: rotate(-4deg);
-  z-index: 2;
+  top: 2%;
+  left: -12%;
+
+  width: 158px;
+  height: 273px;
+
+  z-index: 1;
+
+  --rotation: -4deg;
+
+  --entry-x: -20px;
+  --entry-y: -25px;
+
+  --entry-rotate-x: 18deg;
+  --entry-rotate-y: -14deg;
+
+  --sticker-delay: 0ms;
+
 }
  
 /* Foto vertical, esquina superior derecha */
 .nuestroamor__collage-item--2 {
-  top: 2%;
-  right: 0;
-  width: 40%;
-  height: 44%;
-  transform: rotate(5deg);
+  top: 22%;
+  left: 12%;
+
+  width: 148px;
+  height: 248px;
+
   z-index: 3;
+
+  --rotation: -6deg;
+
+  --entry-x: 15px;
+  --entry-y: -30px;
+
+  --entry-rotate-x: 20deg;
+  --entry-rotate-y: 16deg;
+
+  --sticker-delay: 500ms;
+
+}
+
+.nuestroamor__collage-item--2 img {
+  transform: scale(1.5);
+  object-position: 80% -30px;
 }
  
 /* Foto vertical, esquina inferior derecha */
 .nuestroamor__collage-item--3 {
-  bottom: 0;
-  right: 2%;
-  width: 46%;
-  height: 48%;
-  transform: rotate(-3deg);
-  z-index: 4;
+  top: 25%;
+  left: 43%;
+
+  width: 154px;
+  height: 253px;
+
+  z-index: 5;
+
+  --rotation: -6deg;
+
+  --entry-x: -10px;
+  --entry-y: 20px;
+
+  --entry-rotate-x: -18deg;
+  --entry-rotate-y: -12deg;
+  
+  --sticker-delay: 1000ms;
+
+}
+
+.nuestroamor__collage-item--3 img {
+  object-position: 50% -10px;
 }
  
 /* Foto inferior izquierda, ligeramente detrás */
 .nuestroamor__collage-item--4 {
-  bottom: 2%;
-  left: 4%;
-  width: 44%;
-  height: 40%;
-  transform: rotate(4deg);
-  z-index: 1;
+  top: 3%;
+  right: -7%;
+
+  width: 156px;
+  height: 214px;
+
+  z-index: 2;
+
+  --rotation: 7deg;
+
+  --entry-x: 20px;
+  --entry-y: -20px;
+
+  --entry-rotate-x: 17deg;
+  --entry-rotate-y: 15deg;
+
+  --sticker-delay: 250ms;
+
+}
+
+.nuestroamor__collage-item--4 img {
+  transform: scale(1.1);
+  object-position: 50% 10px;
 }
  
 /* Foto pequeña central, encima de todas (acento) */
 .nuestroamor__collage-item--5 {
-  top: 42%;
-  left: 32%;
-  width: 32%;
-  height: 28%;
-  transform: rotate(-8deg);
-  z-index: 5;
+  top: 34%;
+  right: -5%;
+
+  width: 113px;
+  height: 200px;
+
+  z-index: 3;
+
+  --rotation: 10deg;
+
+  --entry-x: 20px;
+  --entry-y: 15px;
+
+  --entry-rotate-x: -15deg;
+  --entry-rotate-y: 16deg;
+
+  --sticker-delay: 750ms;
+
+}
+
+[data-sticker-collage].sticker-ready
+.nuestroamor__collage-item {
+  opacity: 0;
+}
+
+[data-sticker-collage].sticker-ready.is-visible
+.nuestroamor__collage-item {
+  animation-name: sticker-paste-3d;
+  animation-duration: 1200ms;
+  animation-timing-function: cubic-bezier(0.22, 0.75, 0.25, 1);
+  animation-delay: var(--sticker-delay);
+  animation-fill-mode: both;
+}
+
+[data-sticker-collage].is-visible
+.nuestroamor__collage-item--1 {
+  animation-delay: 0ms;
+}
+
+[data-sticker-collage].is-visible
+.nuestroamor__collage-item--2 {
+  animation-delay: 700ms;
+}
+
+[data-sticker-collage].is-visible
+.nuestroamor__collage-item--3 {
+  animation-delay: 1400ms;
+}
+
+[data-sticker-collage].is-visible
+.nuestroamor__collage-item--4 {
+  animation-delay: 2100ms;
+}
+
+[data-sticker-collage].is-visible
+.nuestroamor__collage-item--5 {
+  animation-delay: 2800ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-sticker-collage].sticker-ready
+  .nuestroamor__collage-item {
+    opacity: 1;
+
+    animation: none;
+
+    transform: rotate(var(--rotation));
+  }
 }
 
 .nuestroamor__closing {
