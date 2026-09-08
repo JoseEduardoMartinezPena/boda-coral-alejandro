@@ -491,14 +491,22 @@
             <!-- Pases -->
             <div class="form__group form__group--pases">
               <label for="pases_disponibles">Número de pases</label>
+              <div class="rsvp__select-wrapper">
+                <select id="pases" class="rsvp__select" required disabled>
+                  <option value="" selected>Pases</option>
+                </select>
+              </div>
+
               <input
-                type="number"
-                id="pases_disponibles"
+                type="hidden"
+                id="pases-confirmados"
+                name="pases_confirmados"
+              />
+
+              <input
+                type="hidden"
+                id="pases-disponibles"
                 name="pases_disponibles"
-                min="1"
-                max="5"
-                readonly
-                required
               />
             </div>
 
@@ -544,7 +552,9 @@
               </div>
             </fieldset>
 
-            <button type="submit" class="btn btn--primary" disabled>Enviar</button>
+            <button type="submit" class="btn btn--primary" disabled>
+              Enviar
+            </button>
           </form>
         </section>
 
@@ -762,7 +772,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--feature"
-              src="/src/assets/images/nuestrahistoria1.webp"
+              src="/src/assets/images/galeria1.jpg"
               alt="Momento 1"
               loading="lazy"
               data-animate="fade-in"
@@ -770,7 +780,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--top-right"
-              src="/src/assets/images/nuestrahistoria2.webp"
+              src="/src/assets/images/galeria2.webp"
               alt="Momento 2"
               loading="lazy"
               data-animate="fade-in"
@@ -778,7 +788,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--middle-left"
-              src="/src/assets/images/nuestrahistoria3.webp"
+              src="/src/assets/images/galeria3.webp"
               alt="Momento 3"
               loading="lazy"
               data-animate="fade-in"
@@ -786,7 +796,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--middle-right-up"
-              src="/src/assets/images/nuestrahistoria4.webp"
+              src="/src/assets/images/galeria4.webp"
               alt="Momento 4"
               loading="lazy"
               data-animate="fade-in"
@@ -794,7 +804,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--bottom-left"
-              src="/src/assets/images/nuestrahistoria6.webp"
+              src="/src/assets/images/galeria6.webp"
               alt="Momento 6"
               loading="lazy"
               data-animate="fade-in"
@@ -802,7 +812,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--proposal"
-              src="/src/assets/images/nuestrahistoria5.webp"
+              src="/src/assets/images/galeria5.webp"
               alt="Momento 5"
               loading="lazy"
               data-animate="fade-in"
@@ -810,7 +820,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--middle-right-down"
-              src="/src/assets/images/nuestrahistoria9.webp"
+              src="/src/assets/images/galeria7.webp"
               alt="Momento 9"
               loading="lazy"
               data-animate="fade-in"
@@ -818,7 +828,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--wide-left"
-              src="/src/assets/images/nuestrahistoria7.webp"
+              src="/src/assets/images/galeria8.webp"
               alt="Momento 7"
               loading="lazy"
               data-animate="fade-in"
@@ -826,7 +836,7 @@
             <img
               data-lightbox
               class="historia__mosaic-item historia__mosaic-item--wide-right"
-              src="/src/assets/images/nuestrahistoria8.webp"
+              src="/src/assets/images/galeria9.webp"
               alt="Momento 8"
               loading="lazy"
               data-animate="fade-in"

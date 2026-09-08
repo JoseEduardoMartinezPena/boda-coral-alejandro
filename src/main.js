@@ -171,8 +171,14 @@ class PersonalizedInvitation {
 
     this.nombreInput = this.form.querySelector('input[name="nombre"]');
 
-    this.pasesInput = this.form.querySelector(
+    this.pasesSelect = document.getElementById("pases");
+
+    this.pasesDisponiblesInput = this.form.querySelector(
       'input[name="pases_disponibles"]',
+    );
+
+    this.pasesConfirmadosInput = this.form.querySelector(
+      'input[name="pases_confirmados"]',
     );
 
     this.idInput = this.form.querySelector('input[name="invitacion_id"]');
@@ -223,7 +229,11 @@ class PersonalizedInvitation {
 
       this.nombreInput.value = invitacion.nombre;
 
-      this.pasesInput.value = invitacion.pases;
+      this.pasesDisponiblesInput.value = invitacion.pases;
+
+      this.populatePases(invitacion.pases);
+
+      this.pasesSelect.disabled = false;
 
       this.idInput.value = invitacion.id;
 
@@ -245,10 +255,38 @@ class PersonalizedInvitation {
     delete this.form.dataset.invitationReady;
 
     this.submitButton.disabled = true;
+    this.pasesSelect.disabled = true;
 
     this.nombreInput.value = "";
-    this.pasesInput.value = "";
+
+    this.pasesDisponiblesInput.value = "";
+
+    this.pasesConfirmadosInput.value = "";
+
+    this.pasesSelect.innerHTML = `
+    <option value="" selected>
+      Selecciona
+    </option>
+  `;
+
     this.idInput.value = "";
+  }
+
+  populatePases(maxPases) {
+    this.pasesSelect.innerHTML = `
+    <option value="" selected>
+      Selecciona
+    </option>
+  `;
+
+    for (let i = 1; i <= maxPases; i++) {
+      const option = document.createElement("option");
+
+      option.value = i;
+      option.textContent = i;
+
+      this.pasesSelect.appendChild(option);
+    }
   }
 
   showError(message) {
@@ -280,10 +318,95 @@ class RSVPForm {
     this.form = document.querySelector('form[name="rsvp"]');
     if (!this.form) return;
 
+    this.pasesSelect = document.getElementById("pases");
+
+    this.pasesConfirmadosInput = this.form.querySelector(
+      'input[name="pases_confirmados"]',
+    );
+
+    this.asistenciaRadios = this.form.querySelectorAll(
+      'input[name="asistencia"]',
+    );
+
+    this.initializeAttendance();
+
     this.messageElement = document.getElementById("form-message");
     this.submitButton = this.form.querySelector('button[type="submit"]');
 
     this.form.addEventListener("submit", (e) => this.handleSubmit(e));
+  }
+
+  initializeAttendance() {
+    if (
+      !this.pasesSelect ||
+      !this.pasesConfirmadosInput ||
+      !this.asistenciaRadios.length
+    ) {
+      return;
+    }
+
+    this.asistenciaRadios.forEach((radio) => {
+      radio.addEventListener("change", () => this.handleAttendanceChange());
+    });
+
+    this.pasesSelect.addEventListener("change", () => this.handlePasesChange());
+  }
+
+  handlePasesChange() {
+    this.pasesConfirmadosInput.value = this.pasesSelect.value;
+  }
+
+  handleAttendanceChange() {
+    const selected = this.form.querySelector(
+      'input[name="asistencia"]:checked',
+    );
+
+    if (!selected) return;
+
+    const value = selected.value
+      .trim()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    if (value === "no") {
+      this.setNotAttending();
+      return;
+    }
+
+    if (value === "si") {
+      this.setAttending();
+    }
+  }
+
+  setNotAttending() {
+    this.pasesSelect.disabled = false;
+
+    let zeroOption = this.pasesSelect.querySelector('option[value="0"]');
+
+    if (!zeroOption) {
+      zeroOption = document.createElement("option");
+
+      zeroOption.value = "0";
+      zeroOption.textContent = "0";
+
+      this.pasesSelect.prepend(zeroOption);
+    }
+
+    this.pasesSelect.value = "";
+
+    this.pasesSelect.disabled = true;
+
+    this.pasesSelect.required = false;
+
+    this.pasesConfirmadosInput.value = "0";
+  }
+
+  setAttending() {
+    this.pasesSelect.disabled = false;
+    this.pasesSelect.required = true;
+
+    this.pasesConfirmadosInput.value = this.pasesSelect.value;
   }
 
   async handleSubmit(e) {
@@ -447,9 +570,7 @@ class ScrollAnimations {
  */
 class StickerCollage {
   constructor() {
-    this.collage = document.querySelector(
-      "[data-sticker-collage]",
-    );
+    this.collage = document.querySelector("[data-sticker-collage]");
 
     if (!this.collage) return;
 

@@ -101,7 +101,7 @@
   border: 0;
   border-radius: 999px;
 
-  background-color: #ebe9e9;
+  background-color: #ECEAEA;
 
   font-family: var(--font-sans);
   font-size: 16px;
@@ -185,4 +185,73 @@
 
   margin-bottom: 8px;
   font-size: 13px;
+}
+
+.rsvp__select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.rsvp__select {
+  width: 100%;
+  height: 38px;
+
+  padding: 0 32px 0 12px;
+
+  border: none;
+  border-radius: 999px;
+
+  background-color: #ECEAEA;
+;
+
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+.rsvp__select-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  right: 13px;
+
+  width: 7px;
+  height: 7px;
+
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+
+  transform:
+    translateY(-65%)
+    rotate(45deg);
+
+  pointer-events: none;
+}
+
+.rsvp__select:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
+}
+
+.rsvp__select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.rsvp__select-wrapper:has(.rsvp__select:disabled)::after {
+  opacity: 0.4;
+}
+
+.invitation-status {
+  font-size: var(--text-xs);
+  color: #999;
 }
