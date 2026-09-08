@@ -173,7 +173,6 @@
             <section class="itinerary">
               <header class="itinerary__header">
                 <h2 class="itinerary__title">Itinerario</h2>
-                <span class="itinerary__notice">no niños</span>
               </header>
 
               <div class="itinerary__ceremony">
@@ -263,7 +262,7 @@
                 </p>
 
                 <p class="dresscode__line">
-                  <strong>Hombres:</strong> Guayabera (no manta) o traje de lino
+                  <strong>Hombres:</strong> Guayabera o traje de lino
                 </p>
               </div>
 
@@ -450,6 +449,8 @@
             data-netlify="true"
             netlify-honeypot="bot-field"
           >
+            <input type="hidden" name="invitacion_id" id="invitacion-id" />
+
             <!-- Necesario si enviamos mediante fetch/AJAX -->
             <input type="hidden" name="form-name" value="rsvp" />
 
@@ -466,6 +467,13 @@
               </label>
             </p>
 
+            <p
+              id="invitation-status"
+              class="invitation-status"
+              hidden
+              aria-live="polite"
+            ></p>
+
             <!-- MENSAJE -->
             <div
               id="form-message"
@@ -477,25 +485,19 @@
             <!-- Nombre -->
             <div class="form__group form__group--nombre">
               <label for="nombre">Nombre Completo</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                autocomplete="name"
-                required
-              />
+              <input type="text" id="nombre" name="nombre" readonly required />
             </div>
 
             <!-- Pases -->
             <div class="form__group form__group--pases">
-              <label for="pases">Número de pases</label>
+              <label for="pases_disponibles">Número de pases</label>
               <input
                 type="number"
-                id="pases"
-                name="pases"
+                id="pases_disponibles"
+                name="pases_disponibles"
                 min="1"
                 max="5"
-                inputmode="numeric"
+                readonly
                 required
               />
             </div>
@@ -542,7 +544,7 @@
               </div>
             </fieldset>
 
-            <button type="submit" class="btn btn--primary">Enviar</button>
+            <button type="submit" class="btn btn--primary" disabled>Enviar</button>
           </form>
         </section>
 
@@ -763,6 +765,7 @@
               src="/src/assets/images/nuestrahistoria1.webp"
               alt="Momento 1"
               loading="lazy"
+              data-animate="fade-in"
             />
             <img
               data-lightbox
@@ -770,6 +773,7 @@
               src="/src/assets/images/nuestrahistoria2.webp"
               alt="Momento 2"
               loading="lazy"
+              data-animate="fade-in"
             />
             <img
               data-lightbox
@@ -777,6 +781,7 @@
               src="/src/assets/images/nuestrahistoria3.webp"
               alt="Momento 3"
               loading="lazy"
+              data-animate="fade-in"
             />
             <img
               data-lightbox
@@ -784,6 +789,7 @@
               src="/src/assets/images/nuestrahistoria4.webp"
               alt="Momento 4"
               loading="lazy"
+              data-animate="fade-in"
             />
             <img
               data-lightbox
@@ -791,6 +797,7 @@
               src="/src/assets/images/nuestrahistoria6.webp"
               alt="Momento 6"
               loading="lazy"
+              data-animate="fade-in"
             />
             <img
               data-lightbox
@@ -798,6 +805,7 @@
               src="/src/assets/images/nuestrahistoria5.webp"
               alt="Momento 5"
               loading="lazy"
+              data-animate="fade-in"
             />
             <img
               data-lightbox
@@ -805,6 +813,7 @@
               src="/src/assets/images/nuestrahistoria9.webp"
               alt="Momento 9"
               loading="lazy"
+              data-animate="fade-in"
             />
             <img
               data-lightbox
@@ -812,6 +821,7 @@
               src="/src/assets/images/nuestrahistoria7.webp"
               alt="Momento 7"
               loading="lazy"
+              data-animate="fade-in"
             />
             <img
               data-lightbox
@@ -819,6 +829,7 @@
               src="/src/assets/images/nuestrahistoria8.webp"
               alt="Momento 8"
               loading="lazy"
+              data-animate="fade-in"
             />
           </div>
         </section>

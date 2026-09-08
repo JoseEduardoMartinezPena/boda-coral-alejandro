@@ -297,6 +297,20 @@ a:focus-visible {
   transform: scale(0.85);
 }
 
+[data-animate="fade-in"] {
+  opacity: 0;
+}
+
+.historia__mosaic-item[data-animate="fade-in"] {
+  opacity: 0;
+
+  transition: opacity 900ms ease;
+}
+
+.historia__mosaic-item[data-animate="fade-in"].is-visible {
+  opacity: 1;
+}
+
 [data-animate].is-visible {
   opacity: 1;
   transform: none;

@@ -161,6 +161,118 @@ class Gallery {
 
 /**
  * 3. FORMULARIO RSVP - NETLIFY FORMS
+ * Invitaciones Personalizadas
+ */
+class PersonalizedInvitation {
+  constructor() {
+    this.form = document.querySelector('form[name="rsvp"]');
+
+    if (!this.form) return;
+
+    this.nombreInput = this.form.querySelector('input[name="nombre"]');
+
+    this.pasesInput = this.form.querySelector(
+      'input[name="pases_disponibles"]',
+    );
+
+    this.idInput = this.form.querySelector('input[name="invitacion_id"]');
+
+    this.submitButton = this.form.querySelector('button[type="submit"]');
+
+    this.statusElement = document.getElementById("invitation-status");
+
+    this.init();
+  }
+
+  async init() {
+    this.lockForm();
+
+    const params = new URLSearchParams(window.location.search);
+
+    const token = params.get("i")?.trim();
+
+    if (!token) {
+      this.showError("Este enlace no contiene una invitación válida.");
+
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `/api/invitacion?token=${encodeURIComponent(token)}`,
+        {
+          headers: {
+            Accept: "application/json",
+          },
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error(`Invitación inválida: ${response.status}`);
+      }
+
+      const invitacion = await response.json();
+
+      if (
+        !invitacion.id ||
+        !invitacion.nombre ||
+        !Number.isInteger(invitacion.pases)
+      ) {
+        throw new Error("Datos de invitación incompletos.");
+      }
+
+      this.nombreInput.value = invitacion.nombre;
+
+      this.pasesInput.value = invitacion.pases;
+
+      this.idInput.value = invitacion.id;
+
+      this.form.dataset.invitationReady = "true";
+
+      this.submitButton.disabled = false;
+
+      this.hideStatus();
+    } catch (error) {
+      console.error("Error cargando invitación:", error);
+
+      this.showError(
+        "No pudimos validar esta invitación. Verifica que estés usando el enlace correcto.",
+      );
+    }
+  }
+
+  lockForm() {
+    delete this.form.dataset.invitationReady;
+
+    this.submitButton.disabled = true;
+
+    this.nombreInput.value = "";
+    this.pasesInput.value = "";
+    this.idInput.value = "";
+  }
+
+  showError(message) {
+    this.lockForm();
+
+    if (!this.statusElement) {
+      console.error(message);
+      return;
+    }
+
+    this.statusElement.textContent = message;
+
+    this.statusElement.hidden = false;
+  }
+
+  hideStatus() {
+    if (!this.statusElement) return;
+
+    this.statusElement.hidden = true;
+    this.statusElement.textContent = "";
+  }
+}
+
+/**
  * Manejo de envío y mensajes de confirmación
  */
 class RSVPForm {
@@ -176,6 +288,13 @@ class RSVPForm {
 
   async handleSubmit(e) {
     e.preventDefault();
+
+    // Error si enlace erroneo
+    if (this.form.dataset.invitationReady !== "true") {
+      this.showMessage("No pudimos validar tu invitación.", "error");
+
+      return;
+    }
 
     // Validación nativa del navegador
     if (!this.form.checkValidity()) {
@@ -396,14 +515,6 @@ function initializeModules() {
     console.error("❌ Error en contador:", error);
   }
 
-  // Back to top
-  try {
-    new BackToTop();
-    console.log("✅ Back to top activado");
-  } catch (error) {
-    console.error("❌ Error en back to top:", error);
-  }
-
   // Galería
   try {
     const galery = document.querySelector(".galeria");
@@ -413,6 +524,15 @@ function initializeModules() {
     }
   } catch (error) {
     console.error("❌ Error en galería:", error);
+  }
+
+  // Validación de Enlace RSVP
+  try {
+    new PersonalizedInvitation();
+
+    console.log("✅ Invitación personalizada activada");
+  } catch (error) {
+    console.error("❌ Error en invitación personalizada:", error);
   }
 
   // Formulario RSVP

@@ -22,7 +22,7 @@
   flex-direction: column;
   align-items: center;
 
-  margin-bottom: 9%;
+  margin-bottom: 15%;
 }
 
 .itinerary__title {
@@ -106,10 +106,11 @@
 
 .itinerary__illustration--party {
   width: 55%;
+  margin: var(--space-sm) 0 var(--space-xs);
 }
 
 .itinerary__venue {
-  margin-top: -1%;
+  margin-top: var(--space-xs);
 }
 
 .itinerary__venue-name {
