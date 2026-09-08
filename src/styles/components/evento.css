@@ -36,7 +36,7 @@
   content: "";
 
   position: absolute;
-  top: 0;
+  top: -1px;
   bottom: 0;
 
   background-color: var(--color-green);
@@ -45,21 +45,13 @@
 /* Izquierdo: ya coincide correctamente */
 .event-details__continuation::before {
   left: 0;
-  width: 3.73%;
+  width: 3.85%;
 }
 
 /* Derecho: necesita ser ligeramente más ancho */
 .event-details__continuation::after {
   right: 0;
-  width: calc(3.73% + 1.1px);
-}
-
-.event-details__continuation::before {
-  left: 0;
-}
-
-.event-details__continuation::after {
-  right: 0;
+  width: 4.21%;
 }
 
 .event__image img {

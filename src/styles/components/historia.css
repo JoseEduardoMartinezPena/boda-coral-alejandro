@@ -46,6 +46,8 @@
   border-radius: 0;
 
   box-shadow: none;
+
+  object-position: var(--pos-x, 50%) var(--pos-y, 50%);
 }
 
 .historia__mosaic img {
@@ -58,9 +60,9 @@
   left: 0;
 
   width: 62.5%;
-  height: 17.5%;
+  height: 21%;
 
-  object-position: center;
+  --pos-y: 0%
 }
 
 .historia__mosaic-item--top-right {
@@ -72,11 +74,11 @@
 }
 
 .historia__mosaic-item--middle-left {
-  top: 17.5%;
+  top: 21%;
   left: 0;
 
   width: 62.5%;
-  height: 35%;
+  height: 31.5%;
 }
 
 .historia__mosaic-item--middle-right-up {
@@ -119,6 +121,8 @@
 
   width: 54%;
   height: 17%;
+
+  --pos-y: 40%
 }
 
 .historia__mosaic-item--wide-right {
