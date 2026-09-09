@@ -175,6 +175,11 @@
   text-align: center;
 }
 
+.belleza-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* Primera fila */
 .belleza-list p:nth-child(1),
 .belleza-list p:nth-child(2),
