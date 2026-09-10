@@ -2,7 +2,7 @@ import "./styles/main.css";
 
 /**
  * ============================================
- * INVITACIÓN DE BODA - CORAL & ALEJANDRO
+ * INVITACIÓN DE BODA - CORAL & ANTONIO
  * JavaScript Principal
  * ============================================
  */
