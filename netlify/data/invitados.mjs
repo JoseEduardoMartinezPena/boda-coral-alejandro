@@ -749,4 +749,10 @@ export const invitaciones = {
     pases: 4,
   },
 
+  "ISQdMtx2_WPr": {
+    id: "INV-126",
+    nombre: "Patricia Pedraza Casco",
+    pases: 2,
+  },
+
 };
