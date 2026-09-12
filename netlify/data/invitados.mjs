@@ -211,7 +211,7 @@ export const invitaciones = {
 
   "JpMalfF_Bcag": {
     id: "INV-036",
-    nombre: "Diego Duran",
+    nombre: "Diego Cruz",
     pases: 1,
   },
 
