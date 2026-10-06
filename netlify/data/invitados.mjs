@@ -754,5 +754,17 @@ export const invitaciones = {
     nombre: "Patricia Pedraza Casco",
     pases: 2,
   },
+  
+  "3hVnhStP7k6C": {
+    id: "INV-127",
+    nombre: "Diego Reyes",
+    pases: 1,
+  },
+
+  "MPkF5oplUy5h": {
+    id: "INV-128",
+    nombre: "Hassari Affif",
+    pases: 2,
+  },
 
 };
