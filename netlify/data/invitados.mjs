@@ -5,7 +5,7 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "FSH92HVfOB3A": {
+  FSH92HVfOB3A: {
     id: "INV-002",
     nombre: "Adolfo Perea",
     pases: 2,
@@ -17,7 +17,7 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "aCZhI8c80LfJ": {
+  aCZhI8c80LfJ: {
     id: "INV-004",
     nombre: "German Arroyo",
     pases: 4,
@@ -29,13 +29,13 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "NhNHVEDN2sOu": {
+  NhNHVEDN2sOu: {
     id: "INV-006",
     nombre: "Alejandro Casco Castillo",
     pases: 2,
   },
 
-  "EJYu9PA1E3jM": {
+  EJYu9PA1E3jM: {
     id: "INV-007",
     nombre: "Alejandro Casco Gonzalez",
     pases: 2,
@@ -47,19 +47,19 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "EYasSv22dtrt": {
+  EYasSv22dtrt: {
     id: "INV-009",
     nombre: "Alejandro Ramirez",
     pases: 2,
   },
 
-  "v46hDebNix52": {
+  v46hDebNix52: {
     id: "INV-010",
     nombre: "Alexis Cervantes",
     pases: 2,
   },
 
-  "MfErkosOulVF": {
+  MfErkosOulVF: {
     id: "INV-011",
     nombre: "Alexis Sanchez",
     pases: 2,
@@ -83,13 +83,13 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "hXweebSvppvz": {
+  hXweebSvppvz: {
     id: "INV-015",
     nombre: "Angelica Blanco",
     pases: 1,
   },
 
-  "nOI6qVBrSo6g": {
+  nOI6qVBrSo6g: {
     id: "INV-016",
     nombre: "Antonio Flores",
     pases: 1,
@@ -119,25 +119,25 @@ export const invitaciones = {
     pases: 4,
   },
 
-  "CDCBSy40LDKr": {
+  CDCBSy40LDKr: {
     id: "INV-021",
     nombre: "Arturo Gonzalez Coronado",
     pases: 2,
   },
 
-  "pJBUbNnd7H6f": {
+  pJBUbNnd7H6f: {
     id: "INV-022",
     nombre: "Roberto Crespo",
     pases: 2,
   },
 
-  "dpTBHEJfn84E": {
+  dpTBHEJfn84E: {
     id: "INV-023",
     nombre: "Brayan Agudelo",
     pases: 2,
   },
 
-  "DHp9nDvxjN6y": {
+  DHp9nDvxjN6y: {
     id: "INV-024",
     nombre: "Brenda Morales",
     pases: 2,
@@ -149,13 +149,13 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "ZewhnDR81cBf": {
+  ZewhnDR81cBf: {
     id: "INV-026",
     nombre: "Maria de Jesus Cruz Herrera",
     pases: 1,
   },
 
-  "EvdgmpbWO33F": {
+  EvdgmpbWO33F: {
     id: "INV-027",
     nombre: "Cinthya Baltazar",
     pases: 2,
@@ -167,7 +167,7 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "cUq88NF34pWt": {
+  cUq88NF34pWt: {
     id: "INV-029",
     nombre: "Cuitlahuac Meza",
     pases: 1,
@@ -197,25 +197,25 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "JprDcw_66xO7": {
+  JprDcw_66xO7: {
     id: "INV-034",
     nombre: "Carlos Corro",
     pases: 2,
   },
 
-  "qaH0opjCpFqZ": {
+  qaH0opjCpFqZ: {
     id: "INV-035",
     nombre: "Diego carbonell",
     pases: 2,
   },
 
-  "JpMalfF_Bcag": {
+  JpMalfF_Bcag: {
     id: "INV-036",
     nombre: "Diego Cruz",
     pases: 1,
   },
 
-  "UMhaAEs4i4Lq": {
+  UMhaAEs4i4Lq: {
     id: "INV-037",
     nombre: "Dulce Gonzalez",
     pases: 1,
@@ -227,19 +227,19 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "f51JF4_4GJC6": {
+  f51JF4_4GJC6: {
     id: "INV-039",
     nombre: "Eduardo Romero",
     pases: 2,
   },
 
-  "kusvfyEfepK9": {
+  kusvfyEfepK9: {
     id: "INV-040",
     nombre: "Efren Aguirre",
     pases: 2,
   },
 
-  "DT1XGdYFPVqn": {
+  DT1XGdYFPVqn: {
     id: "INV-041",
     nombre: "Emmanuel Alvarez",
     pases: 1,
@@ -251,7 +251,7 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "kJznnMp3j8hM": {
+  kJznnMp3j8hM: {
     id: "INV-043",
     nombre: "Erika Macias",
     pases: 2,
@@ -263,19 +263,19 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "RboAi5e5aii3": {
+  RboAi5e5aii3: {
     id: "INV-045",
     nombre: "Estefania Barrera",
     pases: 3,
   },
 
-  "Hd5JVU_Squbu": {
+  Hd5JVU_Squbu: {
     id: "INV-046",
     nombre: "Eugenio Casco",
     pases: 1,
   },
 
-  "yw7yj3dsj1ID": {
+  yw7yj3dsj1ID: {
     id: "INV-047",
     nombre: "Fabian Hernandez",
     pases: 2,
@@ -287,7 +287,7 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "D9wA3Bnc3tOO": {
+  D9wA3Bnc3tOO: {
     id: "INV-049",
     nombre: "Fernando Fdz",
     pases: 2,
@@ -305,19 +305,19 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "CX6_aY30hGQc": {
+  CX6_aY30hGQc: {
     id: "INV-052",
     nombre: "Gisela Garcia",
     pases: 2,
   },
 
-  "uUOlEFgi1IVp": {
+  uUOlEFgi1IVp: {
     id: "INV-053",
     nombre: "Guillermo Casco Castillo",
     pases: 1,
   },
 
-  "cCykrCJJYDTa": {
+  cCykrCJJYDTa: {
     id: "INV-054",
     nombre: "Harumy Lezama",
     pases: 2,
@@ -329,7 +329,7 @@ export const invitaciones = {
     pases: 3,
   },
 
-  "w8MsFEYQQhRt": {
+  w8MsFEYQQhRt: {
     id: "INV-056",
     nombre: "Humberto Macias",
     pases: 2,
@@ -341,25 +341,25 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "JNbQaxgIv6qR": {
+  JNbQaxgIv6qR: {
     id: "INV-058",
     nombre: "Irwing Cajica",
     pases: 2,
   },
 
-  "AYtJ56aZbpln": {
+  AYtJ56aZbpln: {
     id: "INV-059",
     nombre: "Itzel Aguilar",
     pases: 2,
   },
 
-  "iDfZQe01LYIq": {
+  iDfZQe01LYIq: {
     id: "INV-060",
     nombre: "Ivan Casco",
     pases: 2,
   },
 
-  "m0Ved7Byy4tJ": {
+  m0Ved7Byy4tJ: {
     id: "INV-061",
     nombre: "Ivanhoe Valdovinos",
     pases: 1,
@@ -371,7 +371,7 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "Jzkv4BqUmHID": {
+  Jzkv4BqUmHID: {
     id: "INV-063",
     nombre: "Javier Merchan",
     pases: 2,
@@ -389,25 +389,25 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "Z3bdlOXzQFw3": {
+  Z3bdlOXzQFw3: {
     id: "INV-066",
     nombre: "Luciano Stefano Serra",
     pases: 1,
   },
 
-  "MuND6P0lLQd9": {
+  MuND6P0lLQd9: {
     id: "INV-067",
     nombre: "Jose Lopez",
     pases: 1,
   },
 
-  "pC6iXPuYxI3l": {
+  pC6iXPuYxI3l: {
     id: "INV-068",
     nombre: "Luis Carpinteyro",
     pases: 2,
   },
 
-  "YPoPSJSdgz5o": {
+  YPoPSJSdgz5o: {
     id: "INV-069",
     nombre: "Juan Carlos Garcia",
     pases: 1,
@@ -419,13 +419,13 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "XL2rJsbF79OE": {
+  XL2rJsbF79OE: {
     id: "INV-071",
     nombre: "Kathya Rangel",
     pases: 2,
   },
 
-  "fxFwm1urKLiv": {
+  fxFwm1urKLiv: {
     id: "INV-072",
     nombre: "Laura Trujeque",
     pases: 1,
@@ -437,7 +437,7 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "HAh6W4ywaWEZ": {
+  HAh6W4ywaWEZ: {
     id: "INV-074",
     nombre: "Liliana Garcia",
     pases: 1,
@@ -449,7 +449,7 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "yosUPq2bzgaj": {
+  yosUPq2bzgaj: {
     id: "INV-076",
     nombre: "Maria Auxilio Delgado Bada",
     pases: 1,
@@ -461,7 +461,7 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "epZZHIaBZH1M": {
+  epZZHIaBZH1M: {
     id: "INV-078",
     nombre: "Roger Caraballo",
     pases: 2,
@@ -497,7 +497,7 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "D6O0gC_UwbPq": {
+  D6O0gC_UwbPq: {
     id: "INV-084",
     nombre: "Maria Eugenia Casco",
     pases: 4,
@@ -521,31 +521,31 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "V_Jkxj4egYJX": {
+  V_Jkxj4egYJX: {
     id: "INV-088",
     nombre: "Maximiliano Munguia",
     pases: 2,
   },
 
-  "ufUqa7yhAY8W": {
+  ufUqa7yhAY8W: {
     id: "INV-089",
     nombre: "Mazaru Lezama Shimizu",
     pases: 2,
   },
 
-  "_0c7aoeHIwSe": {
+  _0c7aoeHIwSe: {
     id: "INV-090",
     nombre: "Melany Aranda",
     pases: 1,
   },
 
-  "ap4Cy5HBWOjN": {
+  ap4Cy5HBWOjN: {
     id: "INV-091",
     nombre: "Guillermo Casco Rodriguez",
     pases: 2,
   },
 
-  "LMFmB2U3sHMc": {
+  LMFmB2U3sHMc: {
     id: "INV-092",
     nombre: "Irma Garcia",
     pases: 1,
@@ -569,25 +569,25 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "VWK4NbBwVoGW": {
+  VWK4NbBwVoGW: {
     id: "INV-096",
     nombre: "Renato duran",
     pases: 2,
   },
 
-  "LcWDPOFSyDFo": {
+  LcWDPOFSyDFo: {
     id: "INV-097",
     nombre: "Rodrigo Vallejo",
     pases: 2,
   },
 
-  "tmrEEXwu8O0g": {
+  tmrEEXwu8O0g: {
     id: "INV-098",
     nombre: "Rogelio soler",
     pases: 2,
   },
 
-  "Duu1wkn_XZzX": {
+  Duu1wkn_XZzX: {
     id: "INV-099",
     nombre: "Jahir Chazari",
     pases: 2,
@@ -599,31 +599,31 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "FPqGnAfA4H9r": {
+  FPqGnAfA4H9r: {
     id: "INV-101",
     nombre: "Ruben Luna Diaz",
     pases: 1,
   },
 
-  "dq1vB0Ogiuzj": {
+  dq1vB0Ogiuzj: {
     id: "INV-102",
     nombre: "Eduardo Ramirez Martinez",
     pases: 2,
   },
 
-  "FZSn2LpTO5EO": {
+  FZSn2LpTO5EO: {
     id: "INV-103",
     nombre: "Sebastian Lezama",
     pases: 2,
   },
 
-  "kCgnLcF9Mby4": {
+  kCgnLcF9Mby4: {
     id: "INV-104",
     nombre: "Irwyn Acevedo Ramirez",
     pases: 2,
   },
 
-  "Vm5HpOaHzWRR": {
+  Vm5HpOaHzWRR: {
     id: "INV-105",
     nombre: "Sutko Cardenas",
     pases: 2,
@@ -635,25 +635,25 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "xqHJj0kg7tKR": {
+  xqHJj0kg7tKR: {
     id: "INV-107",
     nombre: "Teresa Shimizu",
     pases: 1,
   },
 
-  "p1v47l2vtD7E": {
+  p1v47l2vtD7E: {
     id: "INV-108",
     nombre: "Irma Romero Garcia",
     pases: 2,
   },
 
-  "QDKFpyMLchmt": {
+  QDKFpyMLchmt: {
     id: "INV-109",
     nombre: "Victor Lezama",
     pases: 2,
   },
 
-  "BKDc9suP3Nkg": {
+  BKDc9suP3Nkg: {
     id: "INV-110",
     nombre: "Victor Lima",
     pases: 3,
@@ -665,13 +665,13 @@ export const invitaciones = {
     pases: 1,
   },
 
-  "hF_jFUTk_RCz": {
+  hF_jFUTk_RCz: {
     id: "INV-112",
     nombre: "Yolanda Cordeiro",
     pases: 2,
   },
 
-  "k_XBkMTxwWpG": {
+  k_XBkMTxwWpG: {
     id: "INV-113",
     nombre: "Diego Espinosa",
     pases: 1,
@@ -683,88 +683,99 @@ export const invitaciones = {
     pases: 2,
   },
 
-  "hcynGXLc9DKa": {
+  hcynGXLc9DKa: {
     id: "INV-115",
     nombre: "Gerardo Sanchez Barrios",
     pases: 3,
   },
 
-  "ltxMZ0C33cGb": {
+  ltxMZ0C33cGb: {
     id: "INV-116",
     nombre: "Yoshi Aguirre",
     pases: 2,
   },
 
-  "qGdbNcDTpSpl": {
+  qGdbNcDTpSpl: {
     id: "INV-117",
     nombre: "Aranzazu Ruíz",
     pases: 2,
   },
 
-  "rxcDAc8kB7cp": {
+  rxcDAc8kB7cp: {
     id: "INV-118",
     nombre: "Edgar Daniel Tovar",
     pases: 2,
   },
 
-  "zeVhqfgpj5HH": {
+  zeVhqfgpj5HH: {
     id: "INV-119",
     nombre: "Jessica Quiroga",
     pases: 2,
   },
 
-  "SicpBZ83HFdp": {
+  SicpBZ83HFdp: {
     id: "INV-120",
     nombre: "Brenda Villegas",
     pases: 1,
   },
 
-  "_1wOVg4dRh2j": {
+  _1wOVg4dRh2j: {
     id: "INV-121",
     nombre: "Ian Valdovinos",
     pases: 2,
   },
 
-  "rWkhPRq2HIdU": {
+  rWkhPRq2HIdU: {
     id: "INV-122",
     nombre: "Victor Galicia",
     pases: 1,
   },
 
-  "qltSkjgcQnOs": {
+  qltSkjgcQnOs: {
     id: "INV-123",
     nombre: "Marcos Quiñones",
     pases: 1,
   },
 
-  "FhF_UTTdAuek": {
+  FhF_UTTdAuek: {
     id: "INV-124",
     nombre: "Catalina Delgado",
     pases: 1,
   },
 
-  "SbAB8Kq7soqL": {
+  SbAB8Kq7soqL: {
     id: "INV-125",
     nombre: "Diana Damus",
     pases: 4,
   },
 
-  "ISQdMtx2_WPr": {
+  ISQdMtx2_WPr: {
     id: "INV-126",
     nombre: "Patricia Pedraza Casco",
     pases: 2,
   },
-  
+
   "3hVnhStP7k6C": {
     id: "INV-127",
     nombre: "Diego Reyes",
     pases: 1,
   },
 
-  "MPkF5oplUy5h": {
+  MPkF5oplUy5h: {
     id: "INV-128",
     nombre: "Hassari Affif",
     pases: 2,
   },
 
+  "vE_YzcOVrl-S": {
+    id: "INV-129",
+    nombre: "Itzel Calva",
+    pases: 2,
+  },
+
+  vpCBp3ZsLv5C: {
+    id: "INV-130",
+    nombre: "Antonio Peñafort",
+    pases: 1,
+  },
 };
