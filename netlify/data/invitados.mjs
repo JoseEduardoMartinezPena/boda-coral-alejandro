@@ -778,4 +778,10 @@ export const invitaciones = {
     nombre: "Antonio Peñafort",
     pases: 1,
   },
+
+  "GwuFzycfz8oq": {
+    id: "INV-131",
+    nombre: "Francesc Casanova",
+    pases: 1,
+  },
 };
